@@ -46,16 +46,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     # WORKSPACE_DIR al importar el módulo.
     os.environ["FABRICA_WORKSPACE_DIR"] = str(repository)
 
-    from .model_factory import ModelFactoryError, create_model
+    from .model_factory import ModelFactoryError, create_models
     from .state import create_initial_state
     from .workflow import build_autonomous_factory
 
     try:
-        model = create_model()
+        models = create_models()
         factory = build_autonomous_factory(
-            model,
-            model,
-            model,
+            models["architect"],
+            models["developer"],
+            models["auditor"],
             max_iterations=args.max_iterations,
         )
         final_state = factory.invoke(create_initial_state(args.requirement))

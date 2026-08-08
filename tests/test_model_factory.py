@@ -6,6 +6,7 @@ from fabrica_sw.model_factory import (
     ModelConfigurationError,
     ModelFactoryError,
     create_model,
+    create_models,
     load_model_config,
 )
 
@@ -43,6 +44,35 @@ class ModelFactoryTests(unittest.TestCase):
         self.assertEqual(config.provider, "openrouter")
         self.assertEqual(config.base_url, "https://openrouter.ai/api/v1")
 
+    def test_loads_role_specific_configuration(self):
+        config = load_model_config(
+            {
+                "FACTORY_ARCHITECT_PROVIDER": "openai",
+                "FACTORY_ARCHITECT_MODEL": "gpt-5.6-luna",
+                "OPENAI_API_KEY": "secret",
+            },
+            role="architect",
+        )
+        self.assertEqual(config.provider, "openai")
+        self.assertEqual(config.model, "gpt-5.6-luna")
+
+    def test_creates_one_model_per_role(self):
+        env = {
+            "FACTORY_ARCHITECT_PROVIDER": "openai",
+            "FACTORY_ARCHITECT_MODEL": "gpt-5.6-luna",
+            "FACTORY_DEVELOPER_PROVIDER": "openrouter",
+            "FACTORY_DEVELOPER_MODEL": "deepseek/deepseek-v4-flash-0731",
+            "FACTORY_AUDITOR_PROVIDER": "openai",
+            "FACTORY_AUDITOR_MODEL": "gpt-5.6-luna",
+            "OPENAI_API_KEY": "openai-secret",
+            "OPENROUTER_API_KEY": "router-secret",
+        }
+        with patch("fabrica_sw.model_factory._load_chat_openai", return_value=FakeChatOpenAI):
+            models = create_models(env=env)
+        self.assertEqual(set(models), {"architect", "developer", "auditor"})
+        self.assertEqual(models["developer"].kwargs["model"], "deepseek/deepseek-v4-flash-0731")
+        self.assertEqual(models["developer"].kwargs["base_url"], "https://openrouter.ai/api/v1")
+
     def test_rejects_unknown_provider(self):
         with self.assertRaises(ModelConfigurationError):
             load_model_config({"FACTORY_MODEL_PROVIDER": "unknown", "OPENAI_API_KEY": "x"})
@@ -51,6 +81,10 @@ class ModelFactoryTests(unittest.TestCase):
         with self.assertRaises(ModelConfigurationError) as error:
             load_model_config({"FACTORY_MODEL_PROVIDER": "openai"})
         self.assertIn("OPENAI_API_KEY", str(error.exception))
+
+    def test_rejects_unknown_role(self):
+        with self.assertRaises(ModelConfigurationError):
+            load_model_config({"OPENAI_API_KEY": "secret"}, role="operator")
 
     def test_creates_model_lazily(self):
         config = ModelConfig(

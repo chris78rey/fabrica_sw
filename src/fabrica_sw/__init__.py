@@ -100,6 +100,7 @@ from .model_factory import (
     ModelConfigurationError,
     ModelFactoryError,
     create_model,
+    create_models,
     load_model_config,
 )
 
@@ -108,5 +109,6 @@ __all__ = [
     "ModelConfigurationError",
     "ModelFactoryError",
     "create_model",
+    "create_models",
     "load_model_config",
 ]

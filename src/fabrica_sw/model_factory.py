@@ -9,10 +9,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import os
-from typing import Any, Mapping
+from typing import Any, Literal, Mapping
 
 
 SUPPORTED_PROVIDERS = ("openai", "openrouter")
+ModelRole = Literal["architect", "developer", "auditor"]
 
 
 class ModelFactoryError(RuntimeError):
@@ -59,7 +60,15 @@ def _parse_positive_int(value: str, name: str) -> int:
     return parsed
 
 
-def load_model_config(env: Mapping[str, str] | None = None) -> ModelConfig:
+def load_model_config(
+    env: Mapping[str, str] | None = None,
+    *,
+    role: ModelRole | None = None,
+) -> ModelConfig:
+    if role is not None and role not in ("architect", "developer", "auditor"):
+        raise ModelConfigurationError(
+            "role debe ser architect, developer o auditor."
+        )
     """Lee y valida la configuración del modelo desde variables de entorno."""
 
     if env is None:
@@ -70,7 +79,11 @@ def load_model_config(env: Mapping[str, str] | None = None) -> ModelConfig:
         else:
             load_dotenv()
     values = _environment(env)
-    provider = values.get("FACTORY_MODEL_PROVIDER", "openai").strip().lower()
+    role_prefix = f"FACTORY_{role.upper()}_" if role else ""
+    provider = values.get(
+        f"{role_prefix}PROVIDER" if role else "FACTORY_MODEL_PROVIDER",
+        values.get("FACTORY_MODEL_PROVIDER", "openai"),
+    ).strip().lower()
     provider = provider.replace("_", "-")
     if provider == "open-router":
         provider = "openrouter"
@@ -80,7 +93,10 @@ def load_model_config(env: Mapping[str, str] | None = None) -> ModelConfig:
             f"Proveedor no soportado: {provider!r}. Use uno de: {supported}."
         )
 
-    model = values.get("FACTORY_MODEL_NAME", "gpt-4o-mini").strip()
+    model = values.get(
+        f"{role_prefix}MODEL" if role else "FACTORY_MODEL_NAME",
+        values.get("FACTORY_MODEL_NAME", "gpt-4o-mini"),
+    ).strip()
     if not model:
         raise ModelConfigurationError("FACTORY_MODEL_NAME no puede estar vacío.")
 
@@ -152,11 +168,21 @@ def create_model(
     return chat_openai(**kwargs)
 
 
+def create_models(*, env: Mapping[str, str] | None = None) -> dict[str, Any]:
+    """Construye un modelo independiente para cada rol de la fábrica."""
+    return {
+        role: create_model(load_model_config(env, role=role), env=env)
+        for role in ("architect", "developer", "auditor")
+    }
+
+
 __all__ = [
     "ModelConfig",
     "ModelConfigurationError",
     "ModelFactoryError",
+    "ModelRole",
     "SUPPORTED_PROVIDERS",
     "create_model",
+    "create_models",
     "load_model_config",
 ]

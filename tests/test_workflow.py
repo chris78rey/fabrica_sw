@@ -12,6 +12,7 @@ from fabrica_sw.workflow import (
     build_autonomous_factory,
     consolidate_developer_evidence,
 )
+from fabrica_sw.test_profiles import detect_test_command
 
 
 class FakeResponse:
@@ -85,9 +86,7 @@ class WorkflowConstructionTests(unittest.TestCase):
         self.assertEqual(result["source_code_draft"], {"src/auth.py": "contenido actual"})
         self.assertIn("salida 0", result["test_results"])
         read_file.assert_called_once_with("src/auth.py")
-        execute_tests.assert_called_once_with(
-            ["python", "-m", "unittest", "discover", "-s", "tests", "-q"]
-        )
+        execute_tests.assert_called_once_with(detect_test_command(Path.cwd()))
 
     def test_tool_round_limit_stops_repeated_calls(self):
         state = create_initial_state("Implementar autenticación")

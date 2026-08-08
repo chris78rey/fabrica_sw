@@ -26,7 +26,8 @@ from .developer import (
     should_continue_router,
 )
 from .state import FactoryState
-from .safe_factory_tools import execute_test_command, read_file_tool
+from .safe_factory_tools import WORKSPACE_COMMAND_DIR, execute_test_command, read_file_tool
+from .test_profiles import detect_test_command
 from .workflow_policy import (
     MAX_ITERATIONS,
     ROUTE_DEPLOY,
@@ -66,8 +67,11 @@ def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
         path: read_file_tool(path)
         for path in dict.fromkeys(impacted_files)
     }
-    test_results = execute_test_command(
-        ["python", "-m", "unittest", "discover", "-s", "tests", "-q"]
+    test_command = detect_test_command(WORKSPACE_COMMAND_DIR)
+    test_results = (
+        execute_test_command(test_command)
+        if test_command
+        else "No se detectó un comando de pruebas seguro para este proyecto."
     )
     return {
         "source_code_draft": source_code_draft,

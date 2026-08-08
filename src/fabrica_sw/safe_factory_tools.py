@@ -14,7 +14,7 @@ GRAPH_PATH = WORKSPACE_COMMAND_DIR / "graphify-out" / "graph.json"
 GRAPHIFY_COMMAND = str(Path(sys.executable).with_name("graphify.exe"))
 ALLOWED_COMMANDS = {
     "pytest", "python", "python3", "ruff", "black", "flake8", "mypy",
-    "npm", "jest", "cargo", "go", "git", "graphify",
+    "npm", "jest", "cargo", "go", "mvn", "gradle", "godot", "git", "graphify",
 }
 
 
@@ -35,6 +35,12 @@ def _is_safe_command(command_args: list[str]) -> bool:
         return bool(arguments) and arguments[0] in {"test", "check"}
     if base_cmd == "go":
         return bool(arguments) and arguments[0] == "test"
+    if base_cmd == "mvn":
+        return arguments in (["test"], ["test", "-q"])
+    if base_cmd == "gradle":
+        return arguments == ["test"]
+    if base_cmd == "godot":
+        return arguments == ["--headless", "--path", ".", "--editor", "--quit"]
     return False
 
 
