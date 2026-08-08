@@ -52,12 +52,14 @@ class AuditorToolModel:
 
 class WorkflowConstructionTests(unittest.TestCase):
     def test_fallback_executes_architect_developer_auditor_and_delivery(self):
-        app = build_autonomous_factory(
+        app = LocalAutonomousFactory(
             FakeModel(["Blueprint listo"]),
             FakeModel(["Implementación lista"]),
             FakeModel(['{"is_approved": true, "audit_report": "OK"}']),
         )
 
+        # LangGraph es la implementación preferida cuando está instalado; el
+        # fallback local solo se usa en entornos sin esa dependencia.
         self.assertIsInstance(app, LocalAutonomousFactory)
         with patch(
             "fabrica_sw.workflow.execute_test_command",

@@ -9,6 +9,20 @@ from pathlib import Path
 from typing import Sequence
 
 
+def _configure_loaded_workspace(repository: Path) -> None:
+    """Sincroniza las constantes importadas antes de procesar ``--repository``."""
+
+    from . import auditor, git_tools, github_safe_pusher, safe_factory_tools, safe_paths, workflow
+
+    safe_paths.WORKSPACE_DIR = repository
+    safe_factory_tools.WORKSPACE_COMMAND_DIR = repository
+    safe_factory_tools.GRAPH_PATH = repository / "graphify-out" / "graph.json"
+    git_tools.WORKSPACE_DIR = repository
+    github_safe_pusher.WORKSPACE_DIR = repository
+    auditor.WORKSPACE_DIR = repository
+    workflow.WORKSPACE_COMMAND_DIR = repository
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="fabrica-sw",
@@ -45,9 +59,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     # Debe establecerse antes de importar las herramientas que calculan
     # WORKSPACE_DIR al importar el módulo.
     os.environ["FABRICA_WORKSPACE_DIR"] = str(repository)
+    _configure_loaded_workspace(repository)
 
     from .model_factory import ModelFactoryError, create_models
     from .state import create_initial_state
+    from .developer import MAX_TOOL_ROUNDS
     from .workflow import build_autonomous_factory
 
     try:
@@ -58,7 +74,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             models["auditor"],
             max_iterations=args.max_iterations,
         )
-        final_state = factory.invoke(create_initial_state(args.requirement))
+        # Un flujo con herramientas puede superar 25 nodos aunque estÃ© acotado.
+        recursion_limit = max(100, 5 + args.max_iterations * (2 * MAX_TOOL_ROUNDS + 8))
+        final_state = factory.invoke(
+            create_initial_state(args.requirement),
+            config={"recursion_limit": recursion_limit},
+        )
     except (ModelFactoryError, ValueError) as exc:
         raise SystemExit(f"Ejecución no iniciada: {exc}") from exc
 

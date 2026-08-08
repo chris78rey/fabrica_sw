@@ -23,6 +23,16 @@ def _message_content(message: Any) -> str:
     return content if isinstance(content, str) else str(content)
 
 
+def _response_has_tool_calls(response: Any) -> bool:
+    """Indica si la respuesta deja pendiente una ronda de herramientas."""
+
+    if isinstance(response, Mapping):
+        calls = response.get("tool_calls", [])
+    else:
+        calls = getattr(response, "tool_calls", [])
+    return bool(calls)
+
+
 def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, Any]:
     """Solicita al modelo la implementación y avanza una iteración.
 
@@ -33,6 +43,20 @@ def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, A
     requirement = state.get("user_requirement", "")
     if not isinstance(requirement, str) or not requirement.strip():
         raise ValueError("user_requirement debe ser un texto no vacío")
+
+    tool_round_count = state.get("tool_round_count", 0)
+    if tool_round_count >= MAX_TOOL_ROUNDS:
+        current_iteration = state.get("iteration_count", 0)
+        return {
+            "messages": [{
+                "role": "assistant",
+                "content": (
+                    "Se agotó el límite seguro de herramientas del Desarrollador. "
+                    "Paso a consolidación y Auditoría."
+                ),
+            }],
+            "iteration_count": current_iteration + 1,
+        }
 
     blueprint = state.get("architecture_blueprint", {})
     history = list(state.get("messages", []))
@@ -70,7 +94,14 @@ def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, A
     current_iteration = state.get("iteration_count", 0)
     if not isinstance(current_iteration, int) or isinstance(current_iteration, bool) or current_iteration < 0:
         raise ValueError("iteration_count debe ser un entero no negativo")
-    return {"messages": [response], "iteration_count": current_iteration + 1}
+    # Una iteración representa un ciclo completo de desarrollo que terminó en
+    # una respuesta final. Las rondas intermedias de herramientas no deben
+    # consumir el límite de iteraciones del flujo.
+    completed_cycle = not _response_has_tool_calls(response)
+    return {
+        "messages": [response],
+        "iteration_count": current_iteration + (1 if completed_cycle else 0),
+    }
 
 
 def _call_data(call: Any) -> tuple[str, Mapping[str, Any], str | None]:

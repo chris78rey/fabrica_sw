@@ -19,6 +19,7 @@ from .auditor import (
 from .architect import architect_node
 from .developer import (
     MAX_TOOL_ROUNDS,
+    LocalToolNode,
     ROUTE_EXECUTE_TOOLS,
     ROUTE_POST_PROCESS,
     build_tool_executor_node,
@@ -26,7 +27,12 @@ from .developer import (
     should_continue_router,
 )
 from .state import FactoryState
-from .safe_factory_tools import WORKSPACE_COMMAND_DIR, execute_test_command, read_file_tool
+from .safe_factory_tools import (
+    SAFE_DEVELOPMENT_TOOLS,
+    WORKSPACE_COMMAND_DIR,
+    execute_test_command,
+    read_file_tool,
+)
 from .test_profiles import detect_test_command
 from .workflow_policy import (
     MAX_ITERATIONS,
@@ -76,6 +82,7 @@ def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
     return {
         "source_code_draft": source_code_draft,
         "test_results": test_results,
+        "tool_round_count": 0,
         "messages": [
             {
                 "role": "assistant",
@@ -141,8 +148,10 @@ class LocalAutonomousFactory:
         self.auditor_model = auditor_model
         self.max_iterations = max_iterations
         self.deploy_node = deploy_node
-        self.tool_node = build_tool_executor_node()
-        self.audit_tool_node = build_tool_executor_node(AUDITOR_TOOLS)
+        # El fallback debe aceptar respuestas simples de modelos locales y no
+        # depender del contrato estricto AIMessage de LangGraph ToolNode.
+        self.tool_node = LocalToolNode(SAFE_DEVELOPMENT_TOOLS)
+        self.audit_tool_node = LocalToolNode(AUDITOR_TOOLS)
 
     def invoke(
         self,

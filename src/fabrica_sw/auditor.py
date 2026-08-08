@@ -14,6 +14,7 @@ from .safe_factory_tools import (
 )
 from .safe_paths import WORKSPACE_DIR
 from .state import FactoryState
+from .developer import MAX_TOOL_ROUNDS
 
 AUDITOR_SYSTEM_PROMPT = (
     "Eres el Auditor de Software de la fábrica autónoma. Inspecciona los archivos "
@@ -103,16 +104,22 @@ def auditor_node(state: FactoryState, model: Any | None = None) -> dict[str, Any
     ]
 
     history = list(state.get("messages", []))
-    if history:
-        audit_request = messages[-1]
-        messages = [messages[0], *history]
-        if not any(
-            isinstance(item, Mapping)
-            and item.get("role") == "user"
-            and "devuelve el JSON solicitado." in str(item.get("content", ""))
-            for item in history
-        ):
-            messages.append(audit_request)
+    audit_history: list[Any] = []
+    auditor_tool_names = {tool.__name__ for tool in AUDITOR_TOOLS}
+    for index in range(len(history) - 1, -1, -1):
+        item = history[index]
+        calls = item.get("tool_calls", []) if isinstance(item, Mapping) else getattr(item, "tool_calls", [])
+        names = {
+            call.get("name") if isinstance(call, Mapping) else getattr(call, "name", None)
+            for call in calls
+        }
+        if calls and names and names.issubset(auditor_tool_names):
+            audit_history = history[index:]
+            break
+    if audit_history:
+        # El modelo solo recibe su propia secuencia tool-call -> tool-result;
+        # reenviar el historial del Desarrollador rompe el contrato OpenAI.
+        messages = [messages[0], messages[1], *audit_history]
 
     if model is None:
         approved = False
@@ -139,6 +146,10 @@ def auditor_should_continue_router(state: FactoryState) -> str:
         return ROUTE_AUDIT_DECISION
     latest = messages[-1]
     calls = latest.get("tool_calls", []) if isinstance(latest, Mapping) else getattr(latest, "tool_calls", [])
+    tool_round_count = state.get("tool_round_count", 0)
+    if calls and isinstance(tool_round_count, int) and tool_round_count >= MAX_TOOL_ROUNDS:
+        # No volver a ejecutar una llamada que ya alcanzÃ³ el lÃ­mite.
+        return ROUTE_AUDIT_DECISION
     return ROUTE_AUDIT_EXECUTE_TOOLS if calls else ROUTE_AUDIT_DECISION
 
 

@@ -34,6 +34,9 @@ class ModelConfig:
     base_url: str | None = None
     temperature: float = 0.0
     max_tokens: int | None = None
+    reasoning_effort: str | None = None
+    request_timeout: float = 60.0
+    max_retries: int = 0
 
 
 def _environment(env: Mapping[str, str] | None) -> Mapping[str, str]:
@@ -57,6 +60,16 @@ def _parse_positive_int(value: str, name: str) -> int:
         raise ModelConfigurationError(f"{name} debe ser un entero positivo.") from exc
     if parsed <= 0:
         raise ModelConfigurationError(f"{name} debe ser un entero positivo.")
+    return parsed
+
+
+def _parse_positive_float(value: str, name: str) -> float:
+    try:
+        parsed = float(value)
+    except ValueError as exc:
+        raise ModelConfigurationError(f"{name} debe ser un nÃºmero positivo.") from exc
+    if parsed <= 0:
+        raise ModelConfigurationError(f"{name} debe ser un nÃºmero positivo.")
     return parsed
 
 
@@ -121,6 +134,14 @@ def load_model_config(
         if max_tokens_value
         else None
     )
+    reasoning_effort = values.get("FACTORY_REASONING_EFFORT", "none").strip() or None
+    request_timeout = _parse_positive_float(
+        values.get("FACTORY_REQUEST_TIMEOUT_SECONDS", "60"),
+        "FACTORY_REQUEST_TIMEOUT_SECONDS",
+    )
+    max_retries = _parse_positive_int(
+        values.get("FACTORY_MAX_RETRIES", "0") or "0", "FACTORY_MAX_RETRIES"
+    ) if values.get("FACTORY_MAX_RETRIES", "0") != "0" else 0
 
     return ModelConfig(
         provider=provider,
@@ -129,6 +150,9 @@ def load_model_config(
         base_url=base_url,
         temperature=temperature,
         max_tokens=max_tokens,
+        reasoning_effort=reasoning_effort,
+        request_timeout=request_timeout,
+        max_retries=max_retries,
     )
 
 
@@ -160,11 +184,15 @@ def create_model(
         "model": selected.model,
         "api_key": selected.api_key,
         "temperature": selected.temperature,
+        "timeout": selected.request_timeout,
+        "max_retries": selected.max_retries,
     }
     if selected.base_url:
         kwargs["base_url"] = selected.base_url
     if selected.max_tokens is not None:
         kwargs["max_tokens"] = selected.max_tokens
+    if selected.reasoning_effort is not None:
+        kwargs["reasoning_effort"] = selected.reasoning_effort
     return chat_openai(**kwargs)
 
 

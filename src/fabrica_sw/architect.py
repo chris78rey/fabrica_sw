@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 from .safe_factory_tools import graphify_query_tool, graphify_shortest_path_tool, read_file_tool
@@ -44,12 +45,23 @@ def _as_string_list(value: Any) -> list[str]:
     return [item.strip() for item in value if isinstance(item, str) and item.strip()]
 
 
-def _build_blueprint(content: str, graph_context: str) -> dict[str, Any]:
+def _infer_impacted_files(content: str, requirement: str) -> list[str]:
+    """Recupera rutas explícitas si el modelo omite el campo estructurado."""
+
+    parsed = _extract_json_object(content) or {}
+    declared = _as_string_list(parsed.get("impacted_files"))
+    if declared:
+        return declared
+    candidates = re.findall(r"(?<![\w.-])(?:[\w.-]+/)*[\w.-]+\.(?:py|md|txt|json|toml|js|ts|go|rs|java)", requirement)
+    return list(dict.fromkeys(candidates))
+
+
+def _build_blueprint(content: str, graph_context: str, requirement: str = "") -> dict[str, Any]:
     parsed = _extract_json_object(content) or {}
     return {
         "status": "planned",
         "summary": str(parsed.get("summary", content)).strip(),
-        "impacted_files": _as_string_list(parsed.get("impacted_files")),
+        "impacted_files": _infer_impacted_files(content, requirement),
         "dependencies": _as_string_list(parsed.get("dependencies")),
         "rules": _as_string_list(parsed.get("rules")),
         "graph_context": graph_context,
@@ -85,7 +97,7 @@ def architect_node(state: FactoryState, model: Any | None = None) -> dict[str, A
             f"Contexto obtenido:\n{graph_context}"
         )
 
-    blueprint = _build_blueprint(architect_thought, graph_context)
+    blueprint = _build_blueprint(architect_thought, graph_context, requirement)
     blueprint["rules"] = [
         *blueprint["rules"],
         "Consultar Graphify antes de modificar archivos.",
