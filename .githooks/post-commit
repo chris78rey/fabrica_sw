@@ -1,0 +1,19 @@
+#!/bin/sh
+# Hook versionable: reconstruye el grafo AST sin bloquear el commit si Graphify falla.
+set -u
+
+PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+GRAPHIFY="$PROJECT_ROOT/.venv/Scripts/graphify.exe"
+
+if [ ! -f "$GRAPHIFY" ]; then
+    GRAPHIFY="graphify"
+fi
+
+"$GRAPHIFY" update "$PROJECT_ROOT" --code-only --no-cluster
+STATUS=$?
+if [ "$STATUS" -ne 0 ]; then
+    echo "Advertencia: Graphify no pudo reconstruir el grafo (código $STATUS)." >&2
+fi
+
+# La reconstrucción es post-commit; nunca revierte ni bloquea el commit aprobado.
+exit 0

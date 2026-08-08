@@ -1,0 +1,673 @@
+{
+  "communities": {
+    "0": [
+      "src_fabrica_sw_auditor_auditor_should_continue_router",
+      "src_fabrica_sw_auditor_rationale_135",
+      "src_fabrica_sw_developer",
+      "src_fabrica_sw_developer_build_tool_executor_node",
+      "src_fabrica_sw_developer_call_data",
+      "src_fabrica_sw_developer_developer_node",
+      "src_fabrica_sw_developer_localtoolnode",
+      "src_fabrica_sw_developer_localtoolnode_init",
+      "src_fabrica_sw_developer_localtoolnode_invoke",
+      "src_fabrica_sw_developer_message_content",
+      "src_fabrica_sw_developer_py_any",
+      "src_fabrica_sw_developer_rationale_1",
+      "src_fabrica_sw_developer_rationale_124",
+      "src_fabrica_sw_developer_rationale_137",
+      "src_fabrica_sw_developer_rationale_27",
+      "src_fabrica_sw_developer_rationale_91",
+      "src_fabrica_sw_developer_should_continue_router",
+      "src_fabrica_sw_init",
+      "src_fabrica_sw_init_rationale_1",
+      "src_fabrica_sw_persistence",
+      "src_fabrica_sw_persistence_rationale_1",
+      "src_fabrica_sw_state",
+      "src_fabrica_sw_state_architectureblueprint",
+      "src_fabrica_sw_state_factorystate",
+      "src_fabrica_sw_state_rationale_1",
+      "src_fabrica_sw_state_rationale_23",
+      "src_fabrica_sw_state_rationale_35",
+      "src_fabrica_sw_workflow",
+      "src_fabrica_sw_workflow_build_autonomous_factory",
+      "src_fabrica_sw_workflow_consolidate_developer_evidence",
+      "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "src_fabrica_sw_workflow_execute_tools_with_limit",
+      "src_fabrica_sw_workflow_localautonomousfactory",
+      "src_fabrica_sw_workflow_localautonomousfactory_init",
+      "src_fabrica_sw_workflow_localautonomousfactory_invoke",
+      "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
+      "src_fabrica_sw_workflow_merge_state",
+      "src_fabrica_sw_workflow_policy",
+      "src_fabrica_sw_workflow_policy_rationale_1",
+      "src_fabrica_sw_workflow_py_any",
+      "src_fabrica_sw_workflow_rationale_1",
+      "src_fabrica_sw_workflow_rationale_101",
+      "src_fabrica_sw_workflow_rationale_124",
+      "src_fabrica_sw_workflow_rationale_187",
+      "src_fabrica_sw_workflow_rationale_40",
+      "src_fabrica_sw_workflow_rationale_56",
+      "src_fabrica_sw_workflow_rationale_89",
+      "tests_test_developer",
+      "tests_test_developer_developernodetests",
+      "tests_test_developer_developernodetests_test_binds_safe_tools_and_increments_iteration",
+      "tests_test_developer_developernodetests_test_developer_preserves_previous_messages_after_tool_execution",
+      "tests_test_developer_developernodetests_test_local_tool_node_dispatches_only_registered_tools",
+      "tests_test_developer_developernodetests_test_rejects_blank_requirement",
+      "tests_test_developer_developernodetests_test_router_finishes_when_model_has_no_tool_calls",
+      "tests_test_developer_developernodetests_test_router_sends_tool_calls_to_executor",
+      "tests_test_developer_developernodetests_test_without_model_does_not_write_files",
+      "tests_test_developer_fakemodel",
+      "tests_test_developer_fakemodel_bind_tools",
+      "tests_test_developer_fakemodel_invoke",
+      "tests_test_developer_fakeresponse",
+      "tests_test_end_to_end_workflow",
+      "tests_test_state",
+      "typeddict",
+      "valueerror"
+    ],
+    "1": [
+      "src_fabrica_sw_persistence_build_persistence_config",
+      "src_fabrica_sw_persistence_build_thread_config",
+      "src_fabrica_sw_persistence_open_checkpoint_saver",
+      "src_fabrica_sw_persistence_py_any",
+      "src_fabrica_sw_persistence_py_path",
+      "src_fabrica_sw_persistence_rationale_20",
+      "src_fabrica_sw_persistence_rationale_28",
+      "src_fabrica_sw_persistence_rationale_37",
+      "src_fabrica_sw_persistence_rationale_52",
+      "src_fabrica_sw_persistence_resolve_database_path",
+      "src_fabrica_sw_state_add_messages",
+      "src_fabrica_sw_state_create_initial_state",
+      "src_fabrica_sw_state_py_any",
+      "src_fabrica_sw_state_rationale_17",
+      "src_fabrica_sw_state_rationale_66",
+      "src_fabrica_sw_state_rationale_88",
+      "src_fabrica_sw_state_validate_factory_state",
+      "src_fabrica_sw_workflow_policy_evaluate_workflow_route",
+      "src_fabrica_sw_workflow_policy_evaluate_workflow_router",
+      "src_fabrica_sw_workflow_policy_py_any",
+      "src_fabrica_sw_workflow_policy_rationale_16",
+      "src_fabrica_sw_workflow_policy_rationale_36",
+      "tests_test_end_to_end_workflow_approvalmodel",
+      "tests_test_end_to_end_workflow_approvalmodel_invoke",
+      "tests_test_end_to_end_workflow_endtoendworkflowtests",
+      "tests_test_end_to_end_workflow_endtoendworkflowtests_test_architecture_to_synchronization",
+      "tests_test_end_to_end_workflow_py_dict",
+      "tests_test_state_factorystatecontracttests",
+      "tests_test_state_factorystatecontracttests_test_approved_state_routes_to_deploy_before_limit",
+      "tests_test_state_factorystatecontracttests_test_blank_thread_id_is_rejected",
+      "tests_test_state_factorystatecontracttests_test_blueprint_can_carry_impact_information",
+      "tests_test_state_factorystatecontracttests_test_canonical_router_routes_approved_state_to_deploy",
+      "tests_test_state_factorystatecontracttests_test_canonical_router_routes_unapproved_state_to_developer",
+      "tests_test_state_factorystatecontracttests_test_canonical_router_stops_at_iteration_limit",
+      "tests_test_state_factorystatecontracttests_test_canonical_state_contains_shared_fields",
+      "tests_test_state_factorystatecontracttests_test_database_path_is_created_without_touching_database",
+      "tests_test_state_factorystatecontracttests_test_empty_requirement_is_rejected",
+      "tests_test_state_factorystatecontracttests_test_initial_state_has_safe_defaults",
+      "tests_test_state_factorystatecontracttests_test_invalid_impacted_files_are_rejected",
+      "tests_test_state_factorystatecontracttests_test_invalid_iteration_policy_is_rejected",
+      "tests_test_state_factorystatecontracttests_test_invalid_progress_is_rejected",
+      "tests_test_state_factorystatecontracttests_test_iteration_limit_routes_to_stop",
+      "tests_test_state_factorystatecontracttests_test_persistence_uses_factory_database_path",
+      "tests_test_state_factorystatecontracttests_test_thread_config_is_explicit_and_normalized",
+      "tests_test_state_factorystatecontracttests_test_unapproved_state_routes_to_developer_before_limit"
+    ],
+    "2": [
+      "pathlike",
+      "src_fabrica_sw_safe_factory_tools",
+      "src_fabrica_sw_safe_factory_tools_graphify_query_tool",
+      "src_fabrica_sw_safe_factory_tools_graphify_shortest_path_tool",
+      "src_fabrica_sw_safe_factory_tools_list_directory_tool",
+      "src_fabrica_sw_safe_factory_tools_rationale_1",
+      "src_fabrica_sw_safe_factory_tools_rationale_127",
+      "src_fabrica_sw_safe_factory_tools_rationale_156",
+      "src_fabrica_sw_safe_factory_tools_rationale_42",
+      "src_fabrica_sw_safe_factory_tools_rationale_55",
+      "src_fabrica_sw_safe_factory_tools_rationale_66",
+      "src_fabrica_sw_safe_factory_tools_read_file_tool",
+      "src_fabrica_sw_safe_factory_tools_write_file_tool",
+      "src_fabrica_sw_safe_paths",
+      "src_fabrica_sw_safe_paths_py_path",
+      "src_fabrica_sw_safe_paths_rationale_1",
+      "src_fabrica_sw_safe_paths_rationale_17",
+      "src_fabrica_sw_safe_paths_validate_safe_path",
+      "tests_test_graphify_tools",
+      "tests_test_graphify_tools_graphifytoolstests",
+      "tests_test_graphify_tools_graphifytoolstests_test_query_invokes_project_graphify",
+      "tests_test_graphify_tools_graphifytoolstests_test_query_reports_cli_error_and_validates_question",
+      "tests_test_graphify_tools_graphifytoolstests_test_query_reports_missing_graph",
+      "tests_test_graphify_tools_graphifytoolstests_test_shortest_path_invokes_project_graphify",
+      "tests_test_graphify_tools_graphifytoolstests_test_shortest_path_validates_symbols",
+      "tests_test_safe_factory_tools",
+      "tests_test_safe_factory_tools_safefactorytoolstests",
+      "tests_test_safe_factory_tools_safefactorytoolstests_test_all_file_tools_reject_external_paths",
+      "tests_test_safe_factory_tools_safefactorytoolstests_test_directory_listing_is_sorted_and_typed",
+      "tests_test_safe_factory_tools_safefactorytoolstests_test_read_file_reports_missing_and_directory",
+      "tests_test_safe_factory_tools_safefactorytoolstests_test_read_file_returns_utf8_content",
+      "tests_test_safe_factory_tools_safefactorytoolstests_test_write_file_creates_parent_directories",
+      "tests_test_safe_factory_tools_safefactorytoolstests_workspace",
+      "tests_test_safe_paths",
+      "tests_test_safe_paths_safepathtests",
+      "tests_test_safe_paths_safepathtests_test_absolute_path_outside_workspace_is_rejected",
+      "tests_test_safe_paths_safepathtests_test_blank_path_is_rejected",
+      "tests_test_safe_paths_safepathtests_test_parent_escape_is_rejected",
+      "tests_test_safe_paths_safepathtests_test_relative_path_inside_workspace_is_allowed",
+      "tests_test_safe_paths_safepathtests_test_symlink_to_external_target_is_rejected_when_supported",
+      "tests_test_tool_registry",
+      "tests_test_tool_registry_toolregistrytests",
+      "tests_test_tool_registry_toolregistrytests_test_registers_all_safe_tools_in_documented_order",
+      "tests_test_tool_registry_toolregistrytests_test_registry_contains_unique_callables"
+    ],
+    "3": [
+      "simulate_factory_run",
+      "simulate_factory_run_audit_and_measure_progress",
+      "simulate_factory_run_main",
+      "simulate_factory_run_rationale_1",
+      "simulate_factory_run_write_initial_files",
+      "src_fabrica_sw_git_policy",
+      "src_fabrica_sw_git_policy_ensure_commit_approved",
+      "src_fabrica_sw_git_policy_py_any",
+      "src_fabrica_sw_git_policy_rationale_1",
+      "src_fabrica_sw_git_policy_rationale_10",
+      "src_fabrica_sw_git_tools",
+      "src_fabrica_sw_git_tools_git_secure_commit_tool",
+      "src_fabrica_sw_git_tools_py_any",
+      "src_fabrica_sw_git_tools_rationale_1",
+      "src_fabrica_sw_git_tools_rationale_18",
+      "src_fabrica_sw_git_tools_rationale_43",
+      "src_fabrica_sw_git_tools_selected_relative_files",
+      "tests_test_git_policy",
+      "tests_test_git_policy_gitpolicytests",
+      "tests_test_git_policy_gitpolicytests_test_allows_commit_after_explicit_approval",
+      "tests_test_git_policy_gitpolicytests_test_blocks_commit_without_approval",
+      "tests_test_git_policy_gitpolicytests_test_blocks_missing_or_non_boolean_approval",
+      "tests_test_git_policy_gitpolicytests_test_rejects_non_mapping_state",
+      "tests_test_git_tools",
+      "tests_test_git_tools_gitsecurecommittooltests",
+      "tests_test_git_tools_gitsecurecommittooltests_test_add_failure_does_not_run_commit",
+      "tests_test_git_tools_gitsecurecommittooltests_test_commits_only_explicitly_selected_files",
+      "tests_test_git_tools_gitsecurecommittooltests_test_rejected_state_does_not_execute_git",
+      "tests_test_git_tools_gitsecurecommittooltests_test_rejects_path_outside_workspace",
+      "tests_test_git_tools_py_patch",
+      "tests_test_simulation",
+      "tests_test_simulation_simulationcleanuptests",
+      "tests_test_simulation_simulationcleanuptests_test_simulation_removes_temporary_sandbox"
+    ],
+    "4": [
+      "runtimeerror",
+      "src_fabrica_sw_model_factory",
+      "src_fabrica_sw_model_factory_create_model",
+      "src_fabrica_sw_model_factory_environment",
+      "src_fabrica_sw_model_factory_load_chat_openai",
+      "src_fabrica_sw_model_factory_load_model_config",
+      "src_fabrica_sw_model_factory_modelconfig",
+      "src_fabrica_sw_model_factory_modelconfigurationerror",
+      "src_fabrica_sw_model_factory_modelfactoryerror",
+      "src_fabrica_sw_model_factory_parse_float",
+      "src_fabrica_sw_model_factory_parse_positive_int",
+      "src_fabrica_sw_model_factory_py_any",
+      "src_fabrica_sw_model_factory_rationale_1",
+      "src_fabrica_sw_model_factory_rationale_128",
+      "src_fabrica_sw_model_factory_rationale_19",
+      "src_fabrica_sw_model_factory_rationale_23",
+      "src_fabrica_sw_model_factory_rationale_28",
+      "src_fabrica_sw_model_factory_rationale_63",
+      "tests_test_model_factory",
+      "tests_test_model_factory_fakechatopenai",
+      "tests_test_model_factory_fakechatopenai_init",
+      "tests_test_model_factory_modelfactorytests",
+      "tests_test_model_factory_modelfactorytests_test_creates_model_lazily",
+      "tests_test_model_factory_modelfactorytests_test_loads_openai_configuration",
+      "tests_test_model_factory_modelfactorytests_test_loads_openrouter_configuration",
+      "tests_test_model_factory_modelfactorytests_test_rejects_missing_provider_key",
+      "tests_test_model_factory_modelfactorytests_test_rejects_unknown_provider",
+      "tests_test_model_factory_modelfactorytests_test_reports_missing_runtime_dependency"
+    ],
+    "5": [
+      "src_fabrica_sw_architect",
+      "src_fabrica_sw_architect_architect_node",
+      "src_fabrica_sw_architect_as_string_list",
+      "src_fabrica_sw_architect_build_blueprint",
+      "src_fabrica_sw_architect_extract_json_object",
+      "src_fabrica_sw_architect_py_any",
+      "src_fabrica_sw_architect_rationale_1",
+      "src_fabrica_sw_architect_rationale_27",
+      "src_fabrica_sw_architect_rationale_61",
+      "src_fabrica_sw_architect_response_content",
+      "tests_test_architect",
+      "tests_test_architect_architectnodetests",
+      "tests_test_architect_architectnodetests_test_consults_graphify_before_invoking_model",
+      "tests_test_architect_architectnodetests_test_parses_structured_blueprint",
+      "tests_test_architect_architectnodetests_test_rejects_blank_requirement",
+      "tests_test_architect_architectnodetests_test_runs_without_langchain_model",
+      "tests_test_architect_fakemodel",
+      "tests_test_architect_fakemodel_bind_tools",
+      "tests_test_architect_fakemodel_init",
+      "tests_test_architect_fakemodel_invoke",
+      "tests_test_architect_fakeresponse",
+      "tests_test_architect_jsonmodel",
+      "tests_test_architect_jsonmodel_invoke",
+      "tests_test_architect_jsonresponse"
+    ],
+    "6": [
+      "src_fabrica_sw_auditor",
+      "src_fabrica_sw_auditor_auditor_node",
+      "src_fabrica_sw_auditor_calculate_completion_percentage",
+      "src_fabrica_sw_auditor_extract_audit_decision",
+      "src_fabrica_sw_auditor_py_any",
+      "src_fabrica_sw_auditor_rationale_1",
+      "src_fabrica_sw_auditor_rationale_42",
+      "src_fabrica_sw_auditor_rationale_68",
+      "src_fabrica_sw_auditor_rationale_82",
+      "src_fabrica_sw_auditor_read_checklist",
+      "src_fabrica_sw_auditor_response_content",
+      "tests_test_auditor",
+      "tests_test_auditor_auditortests",
+      "tests_test_auditor_auditortests_test_auditor_usa_herramientas_y_extrae_aprobacion",
+      "tests_test_auditor_auditortests_test_calcula_checklist_markdown",
+      "tests_test_auditor_auditortests_test_respuesta_ambigua_no_aprueba",
+      "tests_test_auditor_auditortests_test_router_detecta_llamada_de_herramienta",
+      "tests_test_auditor_auditortests_test_sin_model_no_aprueba",
+      "tests_test_auditor_fakemodel",
+      "tests_test_auditor_fakemodel_bind_tools",
+      "tests_test_auditor_fakemodel_init",
+      "tests_test_auditor_fakemodel_invoke",
+      "tests_test_auditor_fakeresponse"
+    ],
+    "7": [
+      "docs_plan_implementacion",
+      "docs_plan_implementacion_0_base_del_proyecto",
+      "docs_plan_implementacion_1_arquitectura_y_estado_persistente",
+      "docs_plan_implementacion_2_herramientas_de_ejecución_segura",
+      "docs_plan_implementacion_3_flujo_langgraph_seguro",
+      "docs_plan_implementacion_4_sincronización_git_y_graphify",
+      "docs_plan_implementacion_5_validación_y_entrega",
+      "docs_plan_implementacion_criterio_de_avance",
+      "docs_plan_implementacion_cómo_marcar_el_avance",
+      "docs_plan_implementacion_evidencia_usada_para_ordenar_las_tareas",
+      "docs_plan_implementacion_plan_de_implementación_de_la_fábrica_segura",
+      "docs_plan_implementacion_próxima_tarea_sugerida",
+      "docs_plan_implementacion_siguiente_fase",
+      "docs_plan_implementacion_siguiente_fase_186",
+      "docs_plan_implementacion_t10_consolidación_de_evidencia_del_desarrollador",
+      "docs_plan_implementacion_t11_endurecimiento_de_ejecucion_y_sincronizacion_git",
+      "docs_plan_implementacion_t12_empaquetado_y_configuración_operativa",
+      "docs_plan_implementacion_t6_2_verificación_del_constructor_de_orquestación",
+      "docs_plan_implementacion_t6_orquestación_ejecutable_derivada_de_graphify",
+      "docs_plan_implementacion_t7_confiabilidad_del_ciclo_de_herramientas",
+      "docs_plan_implementacion_t8_herramientas_del_auditor",
+      "docs_plan_implementacion_t9_permisos_por_rol_y_blueprint_estructurado"
+    ],
+    "8": [
+      "src_fabrica_sw_github_safe_pusher",
+      "src_fabrica_sw_github_safe_pusher_github_secure_push_tool",
+      "src_fabrica_sw_github_safe_pusher_mask_token",
+      "src_fabrica_sw_github_safe_pusher_py_any",
+      "src_fabrica_sw_github_safe_pusher_rationale_1",
+      "src_fabrica_sw_github_safe_pusher_rationale_39",
+      "src_fabrica_sw_github_safe_pusher_rationale_59",
+      "src_fabrica_sw_github_safe_pusher_validate_ref",
+      "src_fabrica_sw_github_safe_pusher_write_askpass_helper",
+      "tests_test_github_safe_pusher",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests_test_invalid_branch_does_not_push",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests_test_missing_head_does_not_push",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests_test_rejected_state_does_not_push",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests_test_requires_token_before_executing_git",
+      "tests_test_github_safe_pusher_githubsecurepushtooltests_test_verifies_head_before_pushing_without_exposing_token",
+      "tests_test_github_safe_pusher_py_dict",
+      "tests_test_github_safe_pusher_py_patch"
+    ],
+    "9": [
+      "tests_test_workflow",
+      "tests_test_workflow_auditortoolmodel",
+      "tests_test_workflow_auditortoolmodel_bind_tools",
+      "tests_test_workflow_auditortoolmodel_init",
+      "tests_test_workflow_auditortoolmodel_invoke",
+      "tests_test_workflow_fakemodel",
+      "tests_test_workflow_fakemodel_bind_tools",
+      "tests_test_workflow_fakemodel_init",
+      "tests_test_workflow_fakemodel_invoke",
+      "tests_test_workflow_fakeresponse",
+      "tests_test_workflow_fakeresponse_init",
+      "tests_test_workflow_toolcallresponse",
+      "tests_test_workflow_toolcallresponse_init",
+      "tests_test_workflow_workflowconstructiontests",
+      "tests_test_workflow_workflowconstructiontests_test_auditor_ejecuta_herramienta_y_recibe_su_resultado",
+      "tests_test_workflow_workflowconstructiontests_test_consolidates_impacted_files_and_test_results",
+      "tests_test_workflow_workflowconstructiontests_test_fallback_executes_architect_developer_auditor_and_delivery",
+      "tests_test_workflow_workflowconstructiontests_test_tool_round_limit_stops_repeated_calls"
+    ],
+    "10": [
+      "tests_test_workflow_cycle",
+      "tests_test_workflow_cycle_auditormodel",
+      "tests_test_workflow_cycle_auditormodel_bind_tools",
+      "tests_test_workflow_cycle_auditormodel_init",
+      "tests_test_workflow_cycle_auditormodel_invoke",
+      "tests_test_workflow_cycle_developermodel",
+      "tests_test_workflow_cycle_developermodel_bind_tools",
+      "tests_test_workflow_cycle_developermodel_invoke",
+      "tests_test_workflow_cycle_fakeresponse",
+      "tests_test_workflow_cycle_fakeresponse_init",
+      "tests_test_workflow_cycle_run_cycle",
+      "tests_test_workflow_cycle_workflowcycletests",
+      "tests_test_workflow_cycle_workflowcycletests_test_developer_auditor_correction_then_deploy",
+      "tests_test_workflow_cycle_workflowcycletests_test_developer_auditor_stops_at_iteration_limit"
+    ],
+    "11": [
+      "src_fabrica_sw_auth_security",
+      "src_fabrica_sw_auth_security_hash_password_secure",
+      "src_fabrica_sw_auth_security_rationale_1",
+      "src_fabrica_sw_auth_security_rationale_10",
+      "src_fabrica_sw_auth_security_rationale_17",
+      "src_fabrica_sw_auth_security_validate_password_complexity",
+      "tests_test_auth_security",
+      "tests_test_auth_security_authsecuritytests",
+      "tests_test_auth_security_authsecuritytests_test_complexity_accepts_valid_password",
+      "tests_test_auth_security_authsecuritytests_test_complexity_rejects_password_without_digit",
+      "tests_test_auth_security_authsecuritytests_test_complexity_rejects_password_without_uppercase",
+      "tests_test_auth_security_authsecuritytests_test_complexity_rejects_short_password",
+      "tests_test_auth_security_authsecuritytests_test_hash_is_salted_and_does_not_expose_password"
+    ],
+    "12": [
+      "inst",
+      "inst_1_reemplazo_de_componentes_de_buzz_a_puro_python",
+      "inst_2_prompts_de_sistema_para_los_agentes_en_langgraph",
+      "inst_3_blueprint_de_implementación_en_python_langgraph",
+      "inst_4_conectando_graphify_en_modo_autónomo_y_bajo_consumo",
+      "inst_agente_1_el_arquitecto_contextual_architect",
+      "inst_agente_2_el_desarrollador_de_software_developer",
+      "inst_agente_3_el_auditor_de_seguridad_e_integridad_auditor",
+      "inst_estructura_técnica_de_developer_node_py",
+      "inst_qué_hace_este_script_de_orquestación_principal",
+      "inst_qué_puedes_observar_en_esta_simulación",
+      "inst_resumen_de_lo_que_incluye_la_suite_de_herramientas"
+    ],
+    "13": [
+      "src_fabrica_sw_safe_factory_tools_execute_test_command",
+      "src_fabrica_sw_safe_factory_tools_is_safe_command",
+      "src_fabrica_sw_safe_factory_tools_rationale_22",
+      "src_fabrica_sw_safe_factory_tools_rationale_85",
+      "tests_test_execute_test_command",
+      "tests_test_execute_test_command_executetestcommandtests",
+      "tests_test_execute_test_command_executetestcommandtests_test_rejects_command_outside_allowlist",
+      "tests_test_execute_test_command_executetestcommandtests_test_rejects_empty_or_invalid_arguments",
+      "tests_test_execute_test_command_executetestcommandtests_test_rejects_python_code_execution",
+      "tests_test_execute_test_command_executetestcommandtests_test_reports_timeout",
+      "tests_test_execute_test_command_executetestcommandtests_test_runs_allowed_command_without_shell"
+    ],
+    "14": [
+      "docs_graphify_02_prompts_agentes",
+      "docs_graphify_02_prompts_agentes_2_prompts_de_sistema_para_los_agentes_en_langgraph",
+      "docs_graphify_02_prompts_agentes_agente_1_el_arquitecto_contextual_architect",
+      "docs_graphify_02_prompts_agentes_agente_2_el_desarrollador_de_software_developer",
+      "docs_graphify_02_prompts_agentes_agente_3_el_auditor_de_seguridad_e_integridad_auditor"
+    ],
+    "15": [
+      "docs_graphify_10_persistencia_recuperacion",
+      "docs_graphify_10_persistencia_recuperacion_guardar_y_reanudar_una_ejecución",
+      "docs_graphify_10_persistencia_recuperacion_persistencia_recuperación_y_límite_de_iteraciones",
+      "docs_graphify_10_persistencia_recuperacion_política_del_flujo"
+    ],
+    "16": [
+      "docs_graphify_readme",
+      "docs_graphify_readme_fábrica_autónoma_corpus_dividido_para_graphify",
+      "docs_graphify_readme_hook_de_sincronización",
+      "docs_graphify_readme_orden_recomendado"
+    ],
+    "17": [
+      "readme",
+      "readme_desarrollo",
+      "readme_estado",
+      "readme_fábrica_de_software_segura"
+    ],
+    "18": [
+      "tests_test_graphify_hook",
+      "tests_test_graphify_hook_graphifyhooktests",
+      "tests_test_graphify_hook_graphifyhooktests_test_install_script_uses_versionable_hooks_path",
+      "tests_test_graphify_hook_graphifyhooktests_test_versionable_post_commit_hook_rebuilds_code_graph"
+    ],
+    "19": [
+      "test_simulation_eerzif9k_sandbox_test_repo_auth_security",
+      "test_simulation_eerzif9k_sandbox_test_repo_auth_security_hash_password_secure",
+      "test_simulation_eerzif9k_sandbox_test_repo_auth_security_validate_password_complexity"
+    ],
+    "20": [
+      "test_simulation_qyxgws9z_sandbox_test_repo_auth_security",
+      "test_simulation_qyxgws9z_sandbox_test_repo_auth_security_hash_password_secure",
+      "test_simulation_qyxgws9z_sandbox_test_repo_auth_security_validate_password_complexity"
+    ],
+    "21": [
+      "test_simulation_zejrakvt_sandbox_test_repo_auth_security",
+      "test_simulation_zejrakvt_sandbox_test_repo_auth_security_hash_password_secure",
+      "test_simulation_zejrakvt_sandbox_test_repo_auth_security_validate_password_complexity"
+    ],
+    "22": [
+      "docs_graphify_01_contexto_arquitectura",
+      "docs_graphify_01_contexto_arquitectura_1_reemplazo_de_componentes_de_buzz_a_puro_python"
+    ],
+    "23": [
+      "docs_graphify_03_blueprint_langgraph",
+      "docs_graphify_03_blueprint_langgraph_3_blueprint_de_implementación_en_python_langgraph"
+    ],
+    "24": [
+      "docs_graphify_04_integracion_graphify",
+      "docs_graphify_04_integracion_graphify_4_conectando_graphify_en_modo_autónomo_y_bajo_consumo"
+    ],
+    "25": [
+      "docs_graphify_05_safe_factory_tools",
+      "docs_graphify_05_safe_factory_tools_resumen_de_lo_que_incluye_la_suite_de_herramientas"
+    ],
+    "26": [
+      "docs_graphify_06_developer_node",
+      "docs_graphify_06_developer_node_estructura_técnica_de_developer_node_py"
+    ],
+    "27": [
+      "docs_graphify_07_safe_factory_app",
+      "docs_graphify_07_safe_factory_app_qué_hace_este_script_de_orquestación_principal"
+    ],
+    "28": [
+      "docs_graphify_09_simulacion_factory",
+      "docs_graphify_09_simulacion_factory_qué_puedes_observar_en_esta_simulación"
+    ],
+    "29": [
+      "githooks_post_commit",
+      "githooks_post_commit__entry"
+    ],
+    "30": [
+      "docs_graphify_08_github_safe_pusher"
+    ],
+    "31": [
+      "pkg_fabrica_sw"
+    ],
+    "32": [
+      "scripts_install_git_hooks"
+    ],
+    "33": [
+      "split_graphify"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07490079365079365,
+    "1": 0.06363636363636363,
+    "2": 0.07928118393234672,
+    "3": 0.0928030303030303,
+    "4": 0.1455026455026455,
+    "5": 0.14492753623188406,
+    "6": 0.13043478260869565,
+    "7": 0.09090909090909091,
+    "8": 0.20915032679738563,
+    "9": 0.16339869281045752,
+    "10": 0.2087912087912088,
+    "11": 0.21794871794871795,
+    "12": 0.16666666666666666,
+    "13": 0.2545454545454545,
+    "14": 0.4,
+    "15": 0.5,
+    "16": 0.5,
+    "17": 0.5,
+    "18": 0.5,
+    "19": 0.6666666666666666,
+    "20": 0.6666666666666666,
+    "21": 0.6666666666666666,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_fabrica_sw_state_factorystate",
+      "label": "FactoryState",
+      "degree": 27
+    },
+    {
+      "id": "docs_plan_implementacion_plan_de_implementación_de_la_fábrica_segura",
+      "label": "Plan de implementación de la fábrica segura",
+      "degree": 21
+    },
+    {
+      "id": "tests_test_state_factorystatecontracttests",
+      "label": "FactoryStateContractTests",
+      "degree": 20
+    },
+    {
+      "id": "src_fabrica_sw_state_create_initial_state",
+      "label": "create_initial_state()",
+      "degree": 18
+    },
+    {
+      "id": "src_fabrica_sw_architect_architect_node",
+      "label": "architect_node()",
+      "degree": 17
+    },
+    {
+      "id": "src_fabrica_sw_auditor_auditor_node",
+      "label": "auditor_node()",
+      "degree": 17
+    },
+    {
+      "id": "src_fabrica_sw_safe_paths_validate_safe_path",
+      "label": "validate_safe_path()",
+      "degree": 17
+    },
+    {
+      "id": "src_fabrica_sw_developer_developer_node",
+      "label": "developer_node()",
+      "degree": 16
+    },
+    {
+      "id": "src_fabrica_sw_workflow_build_autonomous_factory",
+      "label": "build_autonomous_factory()",
+      "degree": 16
+    },
+    {
+      "id": "src_fabrica_sw_github_safe_pusher_github_secure_push_tool",
+      "label": "github_secure_push_tool()",
+      "degree": 14
+    }
+  ],
+  "surprises": [
+    {
+      "source": "FactoryStateContractTests",
+      "target": "ArchitectureBlueprint",
+      "source_files": [
+        "tests/test_state.py",
+        "src/fabrica_sw/state.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "FactoryStateContractTests",
+      "target": "FactoryState",
+      "source_files": [
+        "tests/test_state.py",
+        "src/fabrica_sw/state.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "AuditorToolModel",
+      "target": "LocalAutonomousFactory",
+      "source_files": [
+        "tests/test_workflow.py",
+        "src/fabrica_sw/workflow.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "FakeModel",
+      "target": "LocalAutonomousFactory",
+      "source_files": [
+        "tests/test_workflow.py",
+        "src/fabrica_sw/workflow.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "FakeResponse",
+      "target": "LocalAutonomousFactory",
+      "source_files": [
+        "tests/test_workflow.py",
+        "src/fabrica_sw/workflow.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `FactoryState` connect `__init__.py` to `FactoryStateContractTests`, `architect_node`, `auditor.py`?",
+      "why": "High betweenness centrality (0.047) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `github_secure_push_tool()` connect `github_secure_push_tool` to `__init__.py`, `FactoryStateContractTests`, `ensure_commit_approved`?",
+      "why": "High betweenness centrality (0.043) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `LocalAutonomousFactory` connect `__init__.py` to `.test_auditor_ejecuta_herramienta_y_recibe_su_resultado`?",
+      "why": "High betweenness centrality (0.041) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 3 inferred relationships involving `FactoryState` (e.g. with `LocalToolNode` and `LocalAutonomousFactory`) actually correct?",
+      "why": "`FactoryState` has 3 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `FactoryStateContractTests` (e.g. with `ArchitectureBlueprint` and `FactoryState`) actually correct?",
+      "why": "`FactoryStateContractTests` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `fabrica-sw`, `Estado`, `Desarrollo` to the rest of the system?",
+      "why": "47 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `__init__.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07490079365079365 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
