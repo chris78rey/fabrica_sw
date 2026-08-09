@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import os
+from pathlib import Path
 from typing import Any, Literal, Mapping
 
 
@@ -90,7 +91,11 @@ def load_model_config(
         except ImportError:
             pass
         else:
-            load_dotenv()
+            # Streamlit puede conservar variables antiguas en el proceso.
+            # Usar el .env del proyecto y sobrescribirlas evita seleccionar
+            # una clave vieja o un archivo .env de otra carpeta.
+            project_env = Path(__file__).resolve().parents[2] / ".env"
+            load_dotenv(dotenv_path=project_env, override=True)
     values = _environment(env)
     role_prefix = f"FACTORY_{role.upper()}_" if role else ""
     provider = values.get(

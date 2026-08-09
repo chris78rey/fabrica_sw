@@ -23,6 +23,9 @@ runtime = [
 dev = [
     "pytest>=8,<9",
 ]
+ui = [
+    "streamlit>=1.40,<2",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

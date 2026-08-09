@@ -48,6 +48,7 @@ from .safe_factory_tools import (
     write_file_tool,
 )
 from .workflow import LocalAutonomousFactory, build_autonomous_factory, deploy_and_sync_node
+from .runner import FactoryRunRequest, FactoryRunResult, run_factory
 
 __all__ = [
     "SAFE_DEVELOPMENT_TOOLS",
@@ -94,6 +95,9 @@ __all__ = [
     "LocalAutonomousFactory",
     "build_autonomous_factory",
     "deploy_and_sync_node",
+    "FactoryRunRequest",
+    "FactoryRunResult",
+    "run_factory",
 ]
 from .model_factory import (
     ModelConfig,
