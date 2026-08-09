@@ -8,6 +8,7 @@ inocua: deja el estado listo para que el caller invoque Git de forma explícita.
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping
+import shutil
 from typing import Any
 
 from .auditor import (
@@ -74,6 +75,8 @@ def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
         for path in dict.fromkeys(impacted_files)
     }
     test_command = detect_test_command(WORKSPACE_COMMAND_DIR)
+    if test_command and shutil.which(test_command[0]) is None:
+        test_command = None
     test_results = (
         execute_test_command(test_command)
         if test_command

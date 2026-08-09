@@ -6,6 +6,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).parents[1] / "src"))
 
 from fabrica_sw.state import create_initial_state
+from fabrica_sw.developer import MAX_TOOL_ROUNDS
 from fabrica_sw.workflow import (
     LocalAutonomousFactory,
     _execute_tools_with_limit,
@@ -92,9 +93,9 @@ class WorkflowConstructionTests(unittest.TestCase):
 
     def test_tool_round_limit_stops_repeated_calls(self):
         state = create_initial_state("Implementar autenticación")
-        state["tool_round_count"] = 8
+        state["tool_round_count"] = MAX_TOOL_ROUNDS
         result = _execute_tools_with_limit(state, object())
-        self.assertEqual(8, result["tool_round_count"])
+        self.assertEqual(MAX_TOOL_ROUNDS, result["tool_round_count"])
         self.assertIn("límite de 8 rondas", result["messages"][0]["content"])
 
 

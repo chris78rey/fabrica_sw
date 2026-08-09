@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
+import os
 from typing import Any
 
 from .safe_factory_tools import SAFE_DEVELOPMENT_TOOLS
@@ -15,7 +16,16 @@ DEVELOPER_SYSTEM_PROMPT = (
 )
 ROUTE_EXECUTE_TOOLS = "execute_tools"
 ROUTE_POST_PROCESS = "post_process"
-MAX_TOOL_ROUNDS = 8
+def _configured_max_tool_rounds() -> int:
+    raw_value = os.environ.get("FACTORY_MAX_TOOL_ROUNDS", "8")
+    try:
+        value = int(raw_value)
+    except ValueError:
+        return 8
+    return value if value > 0 else 8
+
+
+MAX_TOOL_ROUNDS = _configured_max_tool_rounds()
 
 
 def _message_content(message: Any) -> str:
