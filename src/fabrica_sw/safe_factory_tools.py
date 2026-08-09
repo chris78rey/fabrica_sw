@@ -3,14 +3,36 @@
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
+from .dependency_tools import install_project_dependencies_tool
+from .recovery import backup_before_write
+from . import safe_paths
 from .safe_paths import validate_safe_path
 
 WORKSPACE_COMMAND_DIR = validate_safe_path(".")
 GRAPH_PATH = WORKSPACE_COMMAND_DIR / "graphify-out" / "graph.json"
+
+DESTRUCTIVE_SQL_PATTERN = re.compile(
+    r"""
+    \b(
+        DROP\s+(TABLE|DATABASE|SCHEMA|VIEW|INDEX|SEQUENCE)
+        |
+        TRUNCATE\s+TABLE
+        |
+        DELETE\s+FROM
+        |
+        ALTER\s+TABLE\s+.+?\s+DROP
+    )\b
+    """,
+    re.IGNORECASE | re.VERBOSE | re.DOTALL,
+)
+
+SQL_EXTENSIONS = {".sql", ".ddl", ".dml"}
 GRAPHIFY_COMMAND = str(Path(sys.executable).with_name("graphify.exe"))
 ALLOWED_COMMANDS = {
     "pytest", "python", "python3", "ruff", "black", "flake8", "mypy",
@@ -58,12 +80,51 @@ def read_file_tool(file_path: str) -> str:
 
 
 def write_file_tool(file_path: str, content: str) -> str:
-    """Escribe texto UTF-8 y crea directorios padres dentro del workspace."""
+    """Escribe de forma atómica, reversible y no destructiva."""
     try:
+        if not isinstance(content, str):
+            return "WRITE_BLOCKED: content debe ser texto."
+
         safe_path = validate_safe_path(file_path)
+        try:
+            relative = safe_path.relative_to(WORKSPACE_COMMAND_DIR)
+        except ValueError:
+            # WHY: tests and embebedores pueden cambiar el workspace de rutas
+            # sin reconstruir este módulo; usar el workspace vigente mantiene
+            # la resolución relativa coherente.
+            relative = safe_path.relative_to(safe_paths.WORKSPACE_DIR)
+
+        if relative.parts and relative.parts[0] == ".factory":
+            return "WRITE_BLOCKED: el directorio interno .factory está protegido."
+
+        if safe_path.suffix.lower() in SQL_EXTENSIONS and DESTRUCTIVE_SQL_PATTERN.search(content):
+            return (
+                "WRITE_BLOCKED: se detectó SQL destructivo. "
+                "DROP, TRUNCATE, DELETE y ALTER TABLE DROP están prohibidos."
+            )
+
+        if safe_path.is_file() and not content.strip():
+            return "WRITE_BLOCKED: no se permite vaciar completamente un archivo existente."
+
+        backup_path = backup_before_write(safe_path)
         safe_path.parent.mkdir(parents=True, exist_ok=True)
-        safe_path.write_text(content, encoding="utf-8")
-        return f"Éxito: Archivo escrito correctamente en '{file_path}'."
+
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", delete=False, dir=safe_path.parent,
+            prefix=".factory-write-", suffix=".tmp",
+        ) as temporary:
+            temporary.write(content)
+            temporary_path = Path(temporary.name)
+
+        temporary_path.replace(safe_path)
+
+        message = (
+            f"Éxito: Archivo escrito en '{relative.as_posix()}'. "
+            "Archivo escrito correctamente."
+        )
+        if backup_path:
+            message += f" Versión anterior preservada en '{backup_path}'."
+        return message
     except Exception as exc:
         return f"Error escribiendo el archivo: {exc}"
 
@@ -198,6 +259,7 @@ SAFE_DEVELOPMENT_TOOLS = [
     write_file_tool,
     list_directory_tool,
     execute_test_command,
+    install_project_dependencies_tool,
     graphify_query_tool,
     graphify_shortest_path_tool,
 ]
@@ -208,6 +270,7 @@ __all__ = [
     "write_file_tool",
     "list_directory_tool",
     "execute_test_command",
+    "install_project_dependencies_tool",
     "graphify_query_tool",
     "graphify_shortest_path_tool",
     "SAFE_DEVELOPMENT_TOOLS",

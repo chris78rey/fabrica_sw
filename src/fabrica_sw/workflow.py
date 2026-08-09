@@ -144,7 +144,11 @@ def _detect_changed_files() -> list[str]:
         path = line[3:].strip() if len(line) >= 4 else ""
         if " -> " in path:
             path = path.rsplit(" -> ", 1)[-1]
-        if path and not path.lower().endswith((".env", ".pem", ".key")):
+        if (
+            path
+            and not path.startswith(".factory/")
+            and not path.lower().endswith((".env", ".pem", ".key"))
+        ):
             paths.append(path)
     return list(dict.fromkeys(paths))
 

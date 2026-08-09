@@ -1,9 +1,10 @@
-"""Validación de rutas para herramientas que operan en el espacio de trabajo."""
+"""Validación de rutas para herramientas que operan en el workspace."""
 
 from __future__ import annotations
 
 import os
 from pathlib import Path
+
 
 WORKSPACE_DIR = Path(
     os.environ.get("FABRICA_WORKSPACE_DIR", Path.cwd())
@@ -14,22 +15,31 @@ def validate_safe_path(
     target_path: str | os.PathLike[str],
     workspace_dir: str | os.PathLike[str] | None = None,
 ) -> Path:
-    """Resuelve una ruta y garantiza que quede dentro de ``WORKSPACE_DIR``.
+    """Garantiza que la ruta permanezca dentro del repositorio seleccionado."""
 
-    ``Path.resolve`` también sigue enlaces simbólicos existentes, evitando que
-    un enlace dentro del proyecto permita acceder a un destino externo.
-    """
     if isinstance(target_path, str) and not target_path.strip():
         raise ValueError("target_path debe contener texto")
 
-    workspace = Path(workspace_dir).resolve() if workspace_dir is not None else WORKSPACE_DIR
-    candidate = Path(target_path)
+    workspace = (
+        Path(workspace_dir).expanduser().resolve()
+        if workspace_dir is not None
+        else WORKSPACE_DIR.resolve()
+    )
+
+    candidate = Path(target_path).expanduser()
+
+    # Las rutas relativas parten del repositorio seleccionado, no de la fábrica.
+    if not candidate.is_absolute():
+        candidate = workspace / candidate
+
     resolved_path = candidate.resolve()
+
     try:
         resolved_path.relative_to(workspace)
     except ValueError as exc:
         raise ValueError(
-            f"La ruta '{target_path}' está fuera del directorio de trabajo seguro "
+            f"La ruta '{target_path}' está fuera del directorio del workspace seguro "
             f"'{workspace}'."
         ) from exc
+
     return resolved_path

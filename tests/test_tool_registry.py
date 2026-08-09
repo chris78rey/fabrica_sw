@@ -7,6 +7,7 @@ sys.path.insert(0, str(Path(__file__).parents[1] / "src"))
 from fabrica_sw.safe_factory_tools import (
     SAFE_DEVELOPMENT_TOOLS,
     execute_test_command,
+    install_project_dependencies_tool,
     graphify_query_tool,
     graphify_shortest_path_tool,
     list_directory_tool,
@@ -23,6 +24,7 @@ class ToolRegistryTests(unittest.TestCase):
                 write_file_tool,
                 list_directory_tool,
                 execute_test_command,
+                install_project_dependencies_tool,
                 graphify_query_tool,
                 graphify_shortest_path_tool,
             ],

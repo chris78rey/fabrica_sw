@@ -8,8 +8,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from .autonomy import AutonomyConfig
+from .dependency_tools import configure_dependency_installer, get_last_dependency_result
 from .developer import MAX_TOOL_ROUNDS
+from .git_tools import git_secure_commit_tool
 from .model_factory import ModelFactoryError, create_models
+from .recovery import configure_recovery, get_recovery_directory
 from .state import create_initial_state
 from .task_planner import build_tasks
 from .workflow import build_autonomous_factory
@@ -54,6 +58,10 @@ def _build_report(repository: Path, requirement: str, state: dict[str, Any]) -> 
         "completion_percentage": state.get("completion_percentage", 0.0),
         "iteration_count": state.get("iteration_count", 0),
         "audit_report": state.get("audit_report", ""),
+        "autonomy_mode": state.get("autonomy_mode", "safe"),
+        "dependency_install_result": state.get("dependency_install_result", ""),
+        "recovery_directory": state.get("recovery_directory", ""),
+        "auto_commit_result": state.get("auto_commit_result", ""),
         "tasks": build_tasks(requirement),
     }
 
@@ -71,6 +79,12 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
 
     os.environ["FABRICA_WORKSPACE_DIR"] = str(repository)
     configure_loaded_workspace(repository)
+    autonomy = AutonomyConfig.from_env()
+    configure_dependency_installer(repository, autonomy)
+    configure_recovery(
+        repository,
+        enabled=autonomy.create_recovery and autonomy.mode in {"balanced", "full"},
+    )
 
     try:
         models = create_models()
@@ -85,6 +99,25 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
             create_initial_state(request.requirement),
             config={"recursion_limit": recursion_limit},
         )
+        final_state["autonomy_mode"] = autonomy.mode
+        final_state["dependency_install_result"] = get_last_dependency_result()
+        final_state["recovery_directory"] = get_recovery_directory()
+        final_state["auto_commit_result"] = ""
+
+        if autonomy.auto_commit and final_state.get("is_approved", False):
+            selected_files = []
+            for relative_path in final_state.get("changed_files", []):
+                if relative_path.startswith(".factory/"):
+                    continue
+                candidate = repository / relative_path
+                if candidate.is_file():
+                    selected_files.append(relative_path)
+            if selected_files:
+                final_state["auto_commit_result"] = git_secure_commit_tool(
+                    final_state,
+                    selected_files,
+                    "Entrega autónoma validada",
+                )
     except (ModelFactoryError, ValueError):
         raise
 
