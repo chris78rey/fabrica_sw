@@ -11,7 +11,7 @@ from typing import Any
 from .autonomy import AutonomyConfig
 from .dependency_tools import configure_dependency_installer, get_last_dependency_result
 from .developer import MAX_TOOL_ROUNDS
-from .git_tools import git_secure_commit_tool
+from .git_tools import ensure_git_repository, git_secure_commit_tool
 from .model_factory import ModelFactoryError, create_models
 from .recovery import configure_recovery, get_recovery_directory
 from .state import create_initial_state
@@ -62,8 +62,40 @@ def _build_report(repository: Path, requirement: str, state: dict[str, Any]) -> 
         "dependency_install_result": state.get("dependency_install_result", ""),
         "recovery_directory": state.get("recovery_directory", ""),
         "auto_commit_result": state.get("auto_commit_result", ""),
-        "tasks": build_tasks(requirement),
+        "tasks": state.get("tasks") or build_tasks(requirement),
+        "deleted_files": state.get("deleted_files", []),
+        "file_delete_blocked": state.get("file_delete_blocked", False),
+        "git_init_result": state.get("git_init_result", ""),
     }
+
+
+def _snapshot_workspace_files(repository: Path) -> dict[str, bytes]:
+    """Captura archivos existentes para poder restaurar eliminaciones."""
+    snapshot: dict[str, bytes] = {}
+    for path in repository.rglob("*"):
+        if not path.is_file():
+            continue
+        relative = path.relative_to(repository)
+        if relative.parts and relative.parts[0] in {".factory", ".git"}:
+            continue
+        try:
+            snapshot[relative.as_posix()] = path.read_bytes()
+        except OSError:
+            continue
+    return snapshot
+
+
+def _restore_deleted_files(repository: Path, snapshot: dict[str, bytes]) -> list[str]:
+    """Restaura archivos preexistentes que desaparecieron durante la ejecución."""
+    deleted: list[str] = []
+    for relative, content in snapshot.items():
+        target = repository / relative
+        if target.exists():
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+        deleted.append(relative)
+    return deleted
 
 
 def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
@@ -85,6 +117,10 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
         repository,
         enabled=autonomy.create_recovery and autonomy.mode in {"balanced", "full"},
     )
+    git_init_result = ""
+    if autonomy.mode == "full":
+        git_init_result = ensure_git_repository(repository)
+    workspace_snapshot = _snapshot_workspace_files(repository)
 
     try:
         models = create_models()
@@ -103,6 +139,15 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
         final_state["dependency_install_result"] = get_last_dependency_result()
         final_state["recovery_directory"] = get_recovery_directory()
         final_state["auto_commit_result"] = ""
+        deleted_files = _restore_deleted_files(repository, workspace_snapshot)
+        final_state["deleted_files"] = deleted_files
+        final_state["file_delete_blocked"] = bool(deleted_files)
+        final_state["git_init_result"] = git_init_result
+        if deleted_files:
+            final_state["is_approved"] = False
+            final_state["audit_report"] = (
+                f"Se bloquearon y restauraron archivos eliminados: {', '.join(deleted_files)}."
+            )
 
         if autonomy.auto_commit and final_state.get("is_approved", False):
             selected_files = []

@@ -36,7 +36,7 @@ from .safe_factory_tools import (
     execute_test_command,
     read_file_tool,
 )
-from .test_profiles import detect_test_command, resolve_test_executable
+from .test_profiles import detect_test_command, resolve_test_executable, validate_static_web_project
 from .workflow_policy import (
     MAX_ITERATIONS,
     ROUTE_DEPLOY,
@@ -79,10 +79,16 @@ def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
     test_command = detect_test_command(WORKSPACE_COMMAND_DIR)
     executable = resolve_test_executable(test_command, WORKSPACE_COMMAND_DIR) if test_command else None
     if not test_command:
-        test_results = "VALIDATION_BLOCKED: No se detectó un comando de validación seguro."
-        validation_available = False
-        validation_passed = False
-        validation_exit_code = None
+        static_result = validate_static_web_project(WORKSPACE_COMMAND_DIR)
+        if static_result is None:
+            test_results = "VALIDATION_BLOCKED: No se detectó un comando de validación seguro."
+            validation_available = False
+            validation_passed = False
+            validation_exit_code = None
+        else:
+            test_results, validation_exit_code = static_result
+            validation_available = True
+            validation_passed = validation_exit_code == 0
     elif executable is None:
         test_results = f"VALIDATION_BLOCKED: ejecutable no instalado: {test_command[0]}"
         validation_available = False
@@ -138,7 +144,7 @@ def _detect_changed_files() -> list[str]:
     except (OSError, subprocess.TimeoutExpired):
         return []
     if result.returncode != 0:
-        return []
+        return _list_workspace_files()
     paths = []
     for line in result.stdout.splitlines():
         path = line[3:].strip() if len(line) >= 4 else ""
@@ -151,6 +157,22 @@ def _detect_changed_files() -> list[str]:
         ):
             paths.append(path)
     return list(dict.fromkeys(paths))
+
+
+def _list_workspace_files() -> list[str]:
+    """Fallback para carpetas nuevas todavía no inicializadas como Git."""
+    paths = []
+    for path in WORKSPACE_COMMAND_DIR.rglob("*"):
+        if not path.is_file():
+            continue
+        relative = path.relative_to(WORKSPACE_COMMAND_DIR).as_posix()
+        if (
+            relative
+            and not relative.startswith((".factory/", ".git/"))
+            and not relative.lower().endswith((".env", ".pem", ".key"))
+        ):
+            paths.append(relative)
+    return sorted(paths)
 
 
 def _apply_quality_gate(state: FactoryState) -> dict[str, Any]:

@@ -196,8 +196,9 @@ def graphify_query_tool(question: str) -> str:
         return "Error: La pregunta de Graphify debe ser un texto no vacío."
     if not GRAPH_PATH.exists():
         return (
-            "Error: No se encuentra graphify-out/graph.json. "
-            "Asegúrese de ejecutar primero 'graphify .' en el repositorio."
+            "GRAPHIFY_BOOTSTRAP: No se encuentra graphify-out/graph.json. "
+            "Continúe con inspección directa de archivos; Graphify es opcional "
+            "para repositorios nuevos."
         )
 
     try:
@@ -226,7 +227,7 @@ def graphify_shortest_path_tool(source_symbol: str, target_symbol: str) -> str:
     if not isinstance(target_symbol, str) or not target_symbol.strip():
         return "Error: target_symbol debe ser un texto no vacío."
     if not GRAPH_PATH.exists():
-        return "Error: No se encuentra graphify-out/graph.json."
+        return "GRAPHIFY_BOOTSTRAP: No se encuentra graphify-out/graph.json; ruta no disponible."
 
     try:
         result = subprocess.run(

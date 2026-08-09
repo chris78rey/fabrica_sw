@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import shutil
+import re
 from pathlib import Path
 
 
@@ -47,4 +48,54 @@ def resolve_test_executable(command: list[str], workspace_dir: Path) -> str | No
     return shutil.which(command[0], path=os.environ.get("PATH"))
 
 
-__all__ = ["detect_test_command", "resolve_test_executable"]
+def validate_static_web_project(workspace_dir: Path) -> tuple[str, int] | None:
+    """Valida un proyecto HTML/JavaScript sin requerir un runner externo."""
+
+    root = Path(workspace_dir)
+    html_path = root / "index.html"
+    if not html_path.is_file():
+        return None
+
+    try:
+        html = html_path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        return f"VALIDATION_STATIC_ERROR: no se pudo leer index.html: {exc}", 1
+
+    errors: list[str] = []
+    lowered = html.lower()
+    if not html.strip():
+        errors.append("index.html está vacío")
+    if "<html" not in lowered or "</html>" not in lowered:
+        errors.append("index.html no contiene una estructura HTML completa")
+
+    referenced_scripts = re.findall(r"<script[^>]+src=[\"']([^\"']+)[\"']", html, re.I)
+    javascript_paths = {path for path in root.rglob("*.js") if path.is_file()}
+    for reference in referenced_scripts:
+        if reference.startswith(("http://", "https://", "//")):
+            continue
+        script_path = (html_path.parent / reference.split("?", 1)[0]).resolve()
+        try:
+            script_path.relative_to(root.resolve())
+        except ValueError:
+            errors.append(f"script fuera del workspace: {reference}")
+            continue
+        if not script_path.is_file():
+            errors.append(f"script referenciado inexistente: {reference}")
+
+    for script_path in javascript_paths:
+        try:
+            source = script_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"no se pudo leer {script_path.relative_to(root)}: {exc}")
+            continue
+        if not source.strip():
+            errors.append(f"{script_path.relative_to(root)} está vacío")
+        if any(source.count(opening) != source.count(closing) for opening, closing in (("(", ")"), ("{", "}"), ("[", "]"))):
+            errors.append(f"posible desequilibrio de delimitadores en {script_path.relative_to(root)}")
+
+    if errors:
+        return "VALIDATION_STATIC_FAILED: " + "; ".join(errors), 1
+    return "VALIDATION_STATIC_PASSED: HTML/JavaScript autocontenido válido.", 0
+
+
+__all__ = ["detect_test_command", "resolve_test_executable", "validate_static_web_project"]

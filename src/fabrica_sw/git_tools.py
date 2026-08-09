@@ -14,6 +14,32 @@ GIT_TIMEOUT_SECONDS = 30
 COMMIT_PREFIX = "[fabrica-sw] "
 
 
+def ensure_git_repository(workspace_dir: str | Path) -> str:
+    """Inicializa Git solo si el workspace aún no es un repositorio."""
+    workspace = Path(workspace_dir).expanduser().resolve()
+    try:
+        check = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=str(workspace), capture_output=True, text=True,
+            timeout=GIT_TIMEOUT_SECONDS, shell=False, check=False,
+        )
+        if (
+            check.returncode == 0
+            and Path(check.stdout.strip()).expanduser().resolve() == workspace
+        ):
+            return "Git ya estaba inicializado."
+        result = subprocess.run(
+            ["git", "init"], cwd=str(workspace), capture_output=True, text=True,
+            timeout=GIT_TIMEOUT_SECONDS, shell=False, check=False,
+        )
+        if result.returncode == 0:
+            return "Repositorio Git inicializado."
+        detail = (result.stderr or result.stdout).strip()
+        return f"Error inicializando Git: {detail or 'git init falló'}"
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return f"Error inicializando Git: {exc}"
+
+
 def _selected_relative_files(selected_files: Sequence[str]) -> list[str]:
     """Valida y convierte rutas seleccionadas a rutas relativas al workspace."""
     if isinstance(selected_files, (str, bytes)) or not selected_files:
@@ -84,4 +110,4 @@ def git_secure_commit_tool(
         return f"Error ejecutando Git: {exc}"
 
 
-__all__ = ["git_secure_commit_tool"]
+__all__ = ["git_secure_commit_tool", "ensure_git_repository"]

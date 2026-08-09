@@ -19,7 +19,8 @@ from .developer import MAX_TOOL_ROUNDS
 AUDITOR_SYSTEM_PROMPT = (
     "Eres el Auditor de Software de la fábrica autónoma. Inspecciona los archivos "
     "impactados usando herramientas seguras, revisa los resultados de pruebas y "
-    "comprueba las decisiones arquitectónicas con Graphify. No escribas archivos, "
+    "comprueba las decisiones arquitectónicas con Graphify cuando exista graph.json; "
+    "en proyectos nuevos acepta el modo bootstrap. No escribas archivos, "
     "no ejecutes commits y responde únicamente con JSON: "
     '{"is_approved": true|false, "audit_report": "..."}. '
     "Aprueba solo si la evidencia es suficiente y no hay fallos críticos."
