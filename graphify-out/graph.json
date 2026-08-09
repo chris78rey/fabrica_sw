@@ -134,7 +134,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_init",
-      "community": 4,
+      "community": 1,
       "community_name": "__init__.py",
       "norm_label": "__init__.py"
     },
@@ -145,7 +145,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_init_rationale_1",
-      "community": 4,
+      "community": 1,
       "community_name": "__init__.py",
       "norm_label": "componentes compartidos de la fabrica de software."
     },
@@ -294,8 +294,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "auditor.py"
     },
     {
@@ -306,8 +306,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_response_content",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_response_content()"
     },
     {
@@ -317,8 +317,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_py_any",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "any"
     },
     {
@@ -330,7 +330,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_extract_audit_decision",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "_extract_audit_decision()"
     },
     {
@@ -341,8 +341,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_calculate_completion_percentage",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_calculate_completion_percentage()"
     },
     {
@@ -353,8 +353,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_read_checklist",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_read_checklist()"
     },
     {
@@ -365,8 +365,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_auditor_node",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "auditor_node()"
     },
     {
@@ -377,8 +377,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_auditor_should_continue_router",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "auditor_should_continue_router()"
     },
     {
@@ -388,8 +388,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_rationale_1",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "nodo de auditoria segura para validar el trabajo del desarrollador."
     },
     {
@@ -400,7 +400,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_rationale_44",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "extrae una decision sin aprobar por accidente una respuesta ambigua."
     },
     {
@@ -410,8 +410,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_rationale_70",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "lee el checklist conocido sin salir del workspace seguro."
     },
     {
@@ -421,8 +421,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_rationale_84",
-      "community": 3,
-      "community_name": "auditor.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "audita el estado actual y devuelve aprobacion, informe y avance."
     },
     {
@@ -432,8 +432,8 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "src_fabrica_sw_auditor_rationale_143",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "envia las llamadas del auditor al ejecutor antes de aplicar la politica."
     },
     {
@@ -511,8 +511,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "autonomy.py"
     },
     {
@@ -523,8 +523,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_env_bool",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "_env_bool()"
     },
     {
@@ -536,8 +536,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_autonomyconfig",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "autonomyconfig"
     },
     {
@@ -548,8 +548,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_autonomyconfig_safe",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": ".safe()"
     },
     {
@@ -560,8 +560,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_autonomyconfig_from_env",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": ".from_env()"
     },
     {
@@ -571,8 +571,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "autonomymode",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "autonomymode"
     },
     {
@@ -582,8 +582,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_rationale_1",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "configuracion de autonomia con limites explicitos y seguros."
     },
     {
@@ -593,8 +593,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_fabrica_sw_autonomy_rationale_21",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "limites de una ejecucion de la fabrica. la instalacion solo puede ocurrir..."
     },
     {
@@ -604,8 +604,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_cli",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "cli.py"
     },
     {
@@ -616,8 +616,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_cli_build_parser",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "build_parser()"
     },
     {
@@ -627,8 +627,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "argumentparser",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "argumentparser"
     },
     {
@@ -639,8 +639,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_cli_main",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "main()"
     },
     {
@@ -650,8 +650,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_cli_rationale_1",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "punto de entrada para ejecutar la fabrica sobre un repositorio local."
     },
     {
@@ -661,8 +661,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "dependency_tools.py"
     },
     {
@@ -673,8 +673,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_configure_dependency_installer",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 38,
+      "community_name": "AutonomyConfig",
       "norm_label": "configure_dependency_installer()"
     },
     {
@@ -684,8 +684,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_py_path",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "path"
     },
     {
@@ -708,8 +708,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_workspace_path",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "_workspace_path()"
     },
     {
@@ -720,8 +720,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_has_node_dependencies",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "_has_node_dependencies()"
     },
     {
@@ -732,8 +732,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_detect_project_type",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "_detect_project_type()"
     },
     {
@@ -744,8 +744,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_run",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "_run()"
     },
     {
@@ -756,8 +756,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_install_project_dependencies_tool",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "install_project_dependencies_tool()"
     },
     {
@@ -767,8 +767,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_rationale_1",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "instalacion de dependencias estrictamente limitada al proyecto."
     },
     {
@@ -778,8 +778,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "src_fabrica_sw_dependency_tools_rationale_93",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 39,
+      "community_name": "dependency_tools.py",
       "norm_label": "instala dependencias declaradas usando unicamente herramientas locales. no..."
     },
     {
@@ -790,7 +790,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "developer.py"
     },
     {
@@ -802,7 +802,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_configured_max_tool_rounds",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "_configured_max_tool_rounds()"
     },
     {
@@ -814,7 +814,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_message_content",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "_message_content()"
     },
     {
@@ -825,7 +825,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_py_any",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "any"
     },
     {
@@ -837,7 +837,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_response_has_tool_calls",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "_response_has_tool_calls()"
     },
     {
@@ -849,7 +849,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_developer_node",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "developer_node()"
     },
     {
@@ -861,7 +861,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_call_data",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "_call_data()"
     },
     {
@@ -874,7 +874,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_localtoolnode",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "localtoolnode"
     },
     {
@@ -886,7 +886,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_localtoolnode_init",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".__init__()"
     },
     {
@@ -898,7 +898,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_localtoolnode_invoke",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".invoke()"
     },
     {
@@ -910,7 +910,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_build_tool_executor_node",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "build_tool_executor_node()"
     },
     {
@@ -921,8 +921,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_should_continue_router",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "should_continue_router()"
     },
     {
@@ -933,7 +933,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_1",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "nodo de desarrollo y despacho seguro de llamadas a herramientas."
     },
     {
@@ -944,7 +944,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_44",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "indica si la respuesta deja pendiente una ronda de herramientas."
     },
     {
@@ -955,7 +955,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_54",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "solicita al modelo la implementacion y avanza una iteracion. el nodo no..."
     },
     {
@@ -966,7 +966,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_147",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "fallback compatible con ``langgraph.prebuilt.toolnode`` para este venv."
     },
     {
@@ -977,7 +977,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_180",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "usa toolnode real si existe; de lo contrario, el fallback local seguro."
     },
     {
@@ -987,8 +987,8 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "src_fabrica_sw_developer_rationale_193",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "envia llamadas de herramientas al ejecutor o termina la fase de desarrollo."
     },
     {
@@ -1271,7 +1271,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "model_factory.py"
     },
     {
@@ -1284,7 +1284,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_modelfactoryerror",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "modelfactoryerror"
     },
     {
@@ -1294,8 +1294,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "runtimeerror",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "runtimeerror"
     },
     {
@@ -1308,7 +1308,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_modelconfigurationerror",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "modelconfigurationerror"
     },
     {
@@ -1319,7 +1319,7 @@
       "_origin": "ast",
       "id": "valueerror",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "valueerror"
     },
     {
@@ -1332,7 +1332,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_modelconfig",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "modelconfig"
     },
     {
@@ -1344,7 +1344,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_environment",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "_environment()"
     },
     {
@@ -1356,7 +1356,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_parse_float",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "_parse_float()"
     },
     {
@@ -1368,7 +1368,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_parse_positive_int",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "_parse_positive_int()"
     },
     {
@@ -1380,7 +1380,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_parse_positive_float",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "_parse_positive_float()"
     },
     {
@@ -1392,7 +1392,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_load_model_config",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "load_model_config()"
     },
     {
@@ -1403,7 +1403,7 @@
       "_origin": "ast",
       "id": "modelrole",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "modelrole"
     },
     {
@@ -1415,7 +1415,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_load_chat_openai",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "_load_chat_openai()"
     },
     {
@@ -1426,7 +1426,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_py_any",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "any"
     },
     {
@@ -1438,7 +1438,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_create_model",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "create_model()"
     },
     {
@@ -1449,8 +1449,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_create_models",
-      "community": 4,
-      "community_name": "__init__.py",
+      "community": 10,
+      "community_name": "runner.py",
       "norm_label": "create_models()"
     },
     {
@@ -1461,7 +1461,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_1",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "construccion de modelos de chat para la fabrica segura. la integracion es..."
     },
     {
@@ -1472,7 +1472,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_21",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "error controlado al configurar o construir el modelo."
     },
     {
@@ -1483,7 +1483,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_25",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "configuracion incompleta o invalida del proveedor."
     },
     {
@@ -1494,7 +1494,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_30",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "configuracion normalizada para un modelo compatible con openai."
     },
     {
@@ -1505,7 +1505,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_180",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "construye un chatopenai para openai u openrouter. openrouter expone una api..."
     },
     {
@@ -1515,8 +1515,8 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "src_fabrica_sw_model_factory_rationale_205",
-      "community": 4,
-      "community_name": "__init__.py",
+      "community": 10,
+      "community_name": "runner.py",
       "norm_label": "construye un modelo independiente para cada rol de la fabrica."
     },
     {
@@ -1526,8 +1526,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "persistence.py"
     },
     {
@@ -1538,8 +1538,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_resolve_database_path",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "resolve_database_path()"
     },
     {
@@ -1549,8 +1549,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_py_path",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "path"
     },
     {
@@ -1561,8 +1561,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_build_thread_config",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 41,
+      "community_name": "build_thread_config",
       "norm_label": "build_thread_config()"
     },
     {
@@ -1573,8 +1573,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_open_checkpoint_saver",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "open_checkpoint_saver()"
     },
     {
@@ -1584,8 +1584,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_py_any",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "any"
     },
     {
@@ -1596,8 +1596,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_build_persistence_config",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "build_persistence_config()"
     },
     {
@@ -1607,8 +1607,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_rationale_1",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "configuracion de persistencia durable para la fabrica."
     },
     {
@@ -1618,8 +1618,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_rationale_20",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "resuelve la base sqlite y crea solo su directorio padre."
     },
     {
@@ -1629,8 +1629,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_rationale_28",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 41,
+      "community_name": "build_thread_config",
       "norm_label": "construye la configuracion que langgraph usa para reanudar un hilo."
     },
     {
@@ -1640,8 +1640,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_rationale_37",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "abre un ``sqlitesaver`` para compilar un grafo con checkpoints."
     },
     {
@@ -1651,8 +1651,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "src_fabrica_sw_persistence_rationale_52",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": "devuelve la configuracion explicita de una ejecucion persistente."
     },
     {
@@ -1662,8 +1662,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 35,
+      "community_name": "safe_factory_tools.py",
       "norm_label": "recovery.py"
     },
     {
@@ -1674,8 +1674,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_configure_recovery",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 35,
+      "community_name": "safe_factory_tools.py",
       "norm_label": "configure_recovery()"
     },
     {
@@ -1685,7 +1685,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_py_path",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "path"
     },
@@ -1697,7 +1697,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_backup_before_write",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "backup_before_write()"
     },
@@ -1709,8 +1709,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_get_recovery_directory",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 35,
+      "community_name": "safe_factory_tools.py",
       "norm_label": "get_recovery_directory()"
     },
     {
@@ -1720,8 +1720,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_rationale_1",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 35,
+      "community_name": "safe_factory_tools.py",
       "norm_label": "recuperacion no destructiva de archivos modificados por la fabrica."
     },
     {
@@ -1731,8 +1731,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_rationale_17",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 35,
+      "community_name": "safe_factory_tools.py",
       "norm_label": "crea un punto de recuperacion unico para la ejecucion."
     },
     {
@@ -1742,7 +1742,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_fabrica_sw_recovery_rationale_39",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "guarda una sola copia del archivo antes de su primera modificacion."
     },
@@ -1766,8 +1766,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_runner_factoryrunrequest",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "factoryrunrequest"
     },
     {
@@ -1913,9 +1913,9 @@
       "label": "Ejecuta la f\u00e1brica y guarda RUN_REPORT.json en el repositorio.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L102",
+      "source_location": "L105",
       "_origin": "ast",
-      "id": "src_fabrica_sw_runner_rationale_102",
+      "id": "src_fabrica_sw_runner_rationale_105",
       "community": 10,
       "community_name": "runner.py",
       "norm_label": "ejecuta la fabrica y guarda run_report.json en el repositorio."
@@ -1927,7 +1927,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "safe_factory_tools.py"
     },
@@ -1939,8 +1939,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_is_safe_command",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "_is_safe_command()"
     },
     {
@@ -1952,7 +1952,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_read_file_tool",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "read_file_tool()"
     },
     {
@@ -1964,7 +1964,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_write_file_tool",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "write_file_tool()"
     },
     {
@@ -1976,7 +1976,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_list_directory_tool",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "list_directory_tool()"
     },
     {
@@ -1987,8 +1987,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_execute_test_command",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "execute_test_command()"
     },
     {
@@ -1999,8 +1999,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_graphify_query_tool",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "graphify_query_tool()"
     },
     {
@@ -2011,8 +2011,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_graphify_shortest_path_tool",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "graphify_shortest_path_tool()"
     },
     {
@@ -2022,7 +2022,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_1",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "herramientas de archivos restringidas al workspace de la fabrica."
     },
@@ -2033,8 +2033,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_44",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "permite perfiles de verificacion, no interpretes ni operaciones mutantes."
     },
     {
@@ -2045,7 +2045,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_70",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "lee un archivo de texto utf-8 dentro del workspace seguro."
     },
     {
@@ -2056,7 +2056,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_83",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "escribe de forma atomica, reversible y no destructiva."
     },
     {
@@ -2067,7 +2067,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_133",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "lista, ordenados, los archivos y carpetas de un directorio seguro."
     },
     {
@@ -2077,8 +2077,8 @@
       "source_location": "L152",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_152",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "ejecuta un comando permitido sin shell y con timeout de 30 segundos."
     },
     {
@@ -2088,8 +2088,8 @@
       "source_location": "L194",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_194",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "consulta el grafo de conocimiento de graphify sin cargar el codigo completo."
     },
     {
@@ -2099,8 +2099,8 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_224",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "encuentra el camino mas corto de dependencias entre dos simbolos."
     },
     {
@@ -2110,7 +2110,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_factory_tools_rationale_92",
-      "community": 0,
+      "community": 35,
       "community_name": "safe_factory_tools.py",
       "norm_label": "# why: tests and embebedores pueden cambiar el workspace de rutas"
     },
@@ -2122,7 +2122,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_paths",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "safe_paths.py"
     },
     {
@@ -2134,7 +2134,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_paths_validate_safe_path",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "validate_safe_path()"
     },
     {
@@ -2145,7 +2145,7 @@
       "_origin": "ast",
       "id": "pathlike",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "pathlike"
     },
     {
@@ -2156,7 +2156,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_paths_py_path",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "path"
     },
     {
@@ -2167,7 +2167,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_paths_rationale_1",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "validacion de rutas para herramientas que operan en el workspace."
     },
     {
@@ -2178,7 +2178,7 @@
       "_origin": "ast",
       "id": "src_fabrica_sw_safe_paths_rationale_18",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "garantiza que la ruta permanezca dentro del repositorio seleccionado."
     },
     {
@@ -2188,7 +2188,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_state",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "state.py"
     },
@@ -2200,7 +2200,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_state_add_messages",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "add_messages()"
     },
@@ -2211,7 +2211,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_py_any",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "any"
     },
@@ -2224,8 +2224,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_state_architectureblueprint",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 42,
+      "community_name": "ArchitectureBlueprint",
       "norm_label": "architectureblueprint"
     },
     {
@@ -2235,8 +2235,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "typeddict",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 42,
+      "community_name": "ArchitectureBlueprint",
       "norm_label": "typeddict"
     },
     {
@@ -2248,8 +2248,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_state_factorystate",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "factorystate"
     },
     {
@@ -2260,7 +2260,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_state_create_initial_state",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "create_initial_state()"
     },
@@ -2272,7 +2272,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_state_validate_factory_state",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "validate_factory_state()"
     },
@@ -2283,7 +2283,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_1",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "contratos de estado compartidos por el flujo graphify/langgraph."
     },
@@ -2294,7 +2294,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_19",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "combina mensajes sin mutar las secuencias de entrada."
     },
@@ -2305,8 +2305,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_25",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 42,
+      "community_name": "ArchitectureBlueprint",
       "norm_label": "resultado de arquitectura que acota el trabajo del desarrollador."
     },
     {
@@ -2316,8 +2316,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_37",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "estado canonico compartido por arquitectura, desarrollo y auditoria."
     },
     {
@@ -2327,7 +2327,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_74",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "crea un estado completo y seguro para iniciar una ejecucion."
     },
@@ -2338,7 +2338,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "src_fabrica_sw_state_rationale_107",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": "valida la forma y los limites del estado completo. los nodos pueden seguir..."
     },
@@ -2349,8 +2349,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_task_planner",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "task_planner.py"
     },
     {
@@ -2361,8 +2361,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_task_planner_build_tasks",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "build_tasks()"
     },
     {
@@ -2372,8 +2372,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_task_planner_py_any",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "any"
     },
     {
@@ -2383,8 +2383,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_task_planner_rationale_1",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "conversion pequena y determinista de requisitos en tareas trazables."
     },
     {
@@ -2394,8 +2394,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_fabrica_sw_task_planner_rationale_10",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "extrae checklists o pasos numerados; si no existen, crea una tarea."
     },
     {
@@ -2405,8 +2405,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "test_profiles.py"
     },
     {
@@ -2417,8 +2417,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_detect_test_command",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "detect_test_command()"
     },
     {
@@ -2428,8 +2428,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_py_path",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "path"
     },
     {
@@ -2440,8 +2440,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_resolve_test_executable",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "resolve_test_executable()"
     },
     {
@@ -2452,8 +2452,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_validate_static_web_project",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "validate_static_web_project()"
     },
     {
@@ -2463,8 +2463,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_rationale_1",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "deteccion conservadora de comandos de verificacion por tipo de proyecto."
     },
     {
@@ -2474,8 +2474,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_rationale_12",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "devuelve un comando seguro y portable para el proyecto detectado. la deteccion..."
     },
     {
@@ -2485,8 +2485,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_rationale_40",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "resuelve ejecutables, permitiendo configurar godot fuera del path."
     },
     {
@@ -2496,8 +2496,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "src_fabrica_sw_test_profiles_rationale_52",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "valida un proyecto html/javascript sin requerir un runner externo."
     },
     {
@@ -2507,80 +2507,80 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "ui_streamlit.py"
     },
     {
       "label": "_choose_directory()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L18",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_choose_directory",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "_choose_directory()"
     },
     {
       "label": "_choose_file()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L31",
+      "source_location": "L28",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_choose_file",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "_choose_file()"
     },
     {
       "label": "_path_is_readable_file()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L47",
+      "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_path_is_readable_file",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "_path_is_readable_file()"
     },
     {
       "label": "_select_repository()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L52",
+      "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_select_repository",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "_select_repository()"
     },
     {
       "label": "_select_requirements_file()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L60",
+      "source_location": "L55",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_select_requirements_file",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "_select_requirements_file()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L68",
+      "source_location": "L62",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_main",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "main()"
     },
     {
@@ -2590,8 +2590,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_ui_streamlit_rationale_1",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 40,
+      "community_name": "ui_streamlit.py",
       "norm_label": "interfaz local para seleccionar un repositorio y ejecutar la fabrica."
     },
     {
@@ -2601,21 +2601,21 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "workflow.py"
     },
     {
-      "label": "deploy_and_sync_node()",
+      "label": "_emit_event()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
       "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_deploy_and_sync_node",
-      "community": 18,
-      "community_name": "workflow.py",
-      "norm_label": "deploy_and_sync_node()"
+      "id": "src_fabrica_sw_workflow_emit_event",
+      "community": 1,
+      "community_name": "__init__.py",
+      "norm_label": "_emit_event()"
     },
     {
       "label": "Any",
@@ -2624,189 +2624,213 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_py_any",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "any"
+    },
+    {
+      "label": "_development_progress()",
+      "file_type": "code",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L79",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_fabrica_sw_workflow_development_progress",
+      "community": 1,
+      "community_name": "__init__.py",
+      "norm_label": "_development_progress()"
+    },
+    {
+      "label": "deploy_and_sync_node()",
+      "file_type": "code",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L86",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "community": 1,
+      "community_name": "__init__.py",
+      "norm_label": "deploy_and_sync_node()"
     },
     {
       "label": "consolidate_developer_evidence()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L65",
+      "source_location": "L102",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_consolidate_developer_evidence",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "consolidate_developer_evidence()"
     },
     {
       "label": "_extract_exit_code()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L126",
+      "source_location": "L163",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_extract_exit_code",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_extract_exit_code()"
     },
     {
       "label": "_detect_changed_files()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L136",
+      "source_location": "L173",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_detect_changed_files",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_detect_changed_files()"
     },
     {
       "label": "_list_workspace_files()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L162",
+      "source_location": "L199",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_list_workspace_files",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_list_workspace_files()"
     },
     {
       "label": "_apply_quality_gate()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L178",
+      "source_location": "L215",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_apply_quality_gate",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_apply_quality_gate()"
     },
     {
       "label": "complete_current_task_node()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L201",
+      "source_location": "L238",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_complete_current_task_node",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "complete_current_task_node()"
     },
     {
       "label": "_has_pending_tasks()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L232",
+      "source_location": "L269",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_has_pending_tasks",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_has_pending_tasks()"
     },
     {
       "label": "_route_after_quality_gate()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L237",
+      "source_location": "L274",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_route_after_quality_gate",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_route_after_quality_gate()"
     },
     {
       "label": "_merge_state()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L242",
+      "source_location": "L279",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_merge_state",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_merge_state()"
     },
     {
       "label": "_execute_tools_with_limit()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L254",
+      "source_location": "L291",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_execute_tools_with_limit",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "_execute_tools_with_limit()"
     },
     {
       "label": "LocalAutonomousFactory",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L277",
+      "source_location": "L314",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_localautonomousfactory",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "localautonomousfactory"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L280",
+      "source_location": "L317",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_localautonomousfactory_init",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": ".__init__()"
     },
     {
       "label": ".invoke()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L299",
+      "source_location": "L338",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": ".invoke()"
     },
     {
       "label": "._run_developer_cycle()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L331",
+      "source_location": "L387",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "._run_developer_cycle()"
     },
     {
       "label": "build_autonomous_factory()",
       "file_type": "code",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L340",
+      "source_location": "L405",
       "_callable": true,
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_build_autonomous_factory",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "build_autonomous_factory()"
     },
     {
@@ -2816,129 +2840,140 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_fabrica_sw_workflow_rationale_1",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "orquestacion segura del flujo arquitecto -> desarrollo -> auditoria. el modulo..."
+    },
+    {
+      "label": "Publica un hito sin convertir el callback de UI en parte del estado.",
+      "file_type": "rationale",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "src_fabrica_sw_workflow_rationale_57",
+      "community": 1,
+      "community_name": "__init__.py",
+      "norm_label": "publica un hito sin convertir el callback de ui en parte del estado."
     },
     {
       "label": "Marca la entrega como preparada sin producir efectos externos.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L50",
+      "source_location": "L87",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_50",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_87",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "marca la entrega como preparada sin producir efectos externos."
     },
     {
       "label": "Consolida archivos impactados y pruebas antes de invocar al Auditor.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L66",
+      "source_location": "L103",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_66",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_103",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "consolida archivos impactados y pruebas antes de invocar al auditor."
     },
     {
       "label": "Extrae un resultado verificable; texto ambiguo nunca equivale a OK.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L127",
+      "source_location": "L164",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_127",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_164",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "extrae un resultado verificable; texto ambiguo nunca equivale a ok."
     },
     {
       "label": "Obtiene cambios Git sin shell y omite secretos conocidos.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L137",
+      "source_location": "L174",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_137",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_174",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "obtiene cambios git sin shell y omite secretos conocidos."
     },
     {
       "label": "Fallback para carpetas nuevas todav\u00eda no inicializadas como Git.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L163",
+      "source_location": "L200",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_163",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_200",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "fallback para carpetas nuevas todavia no inicializadas como git."
     },
     {
       "label": "Impide que una aprobaci\u00f3n textual ignore la evidencia ejecutable.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L179",
+      "source_location": "L216",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_179",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_216",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "impide que una aprobacion textual ignore la evidencia ejecutable."
     },
     {
       "label": "Marca la tarea actual solo despu\u00e9s de auditor\u00eda y validaci\u00f3n aprobadas.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L202",
+      "source_location": "L239",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_202",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_239",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "marca la tarea actual solo despues de auditoria y validacion aprobadas."
     },
     {
       "label": "Aplica una actualizaci\u00f3n de nodo conservando la secuencia de mensajes.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L243",
+      "source_location": "L280",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_243",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_280",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "aplica una actualizacion de nodo conservando la secuencia de mensajes."
     },
     {
       "label": "Ejecuta herramientas y corta ciclos repetitivos de forma determinista.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L255",
+      "source_location": "L292",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_255",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_292",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "ejecuta herramientas y corta ciclos repetitivos de forma determinista."
     },
     {
       "label": "Ejecutor determinista del flujo cuando LangGraph no est\u00e1 disponible.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L278",
+      "source_location": "L315",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_278",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "id": "src_fabrica_sw_workflow_rationale_315",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "ejecutor determinista del flujo cuando langgraph no esta disponible."
     },
     {
       "label": "Construye el flujo completo y selecciona LangGraph o el fallback local.",
       "file_type": "rationale",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L349",
+      "source_location": "L415",
       "_origin": "ast",
-      "id": "src_fabrica_sw_workflow_rationale_349",
-      "community": 18,
-      "community_name": "workflow.py",
+      "id": "src_fabrica_sw_workflow_rationale_415",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "construye el flujo completo y selecciona langgraph o el fallback local."
     },
     {
@@ -3200,7 +3235,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "test_auditor.py"
     },
     {
@@ -3213,7 +3248,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_fakeresponse",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "fakeresponse"
     },
     {
@@ -3226,7 +3261,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_fakemodel",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "fakemodel"
     },
     {
@@ -3238,7 +3273,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_fakemodel_init",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".__init__()"
     },
     {
@@ -3250,7 +3285,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_fakemodel_bind_tools",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".bind_tools()"
     },
     {
@@ -3262,7 +3297,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_fakemodel_invoke",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".invoke()"
     },
     {
@@ -3275,7 +3310,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": "auditortests"
     },
     {
@@ -3287,7 +3322,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests_test_auditor_usa_herramientas_y_extrae_aprobacion",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".test_auditor_usa_herramientas_y_extrae_aprobacion()"
     },
     {
@@ -3299,7 +3334,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests_test_sin_model_no_aprueba",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".test_sin_model_no_aprueba()"
     },
     {
@@ -3311,7 +3346,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests_test_respuesta_ambigua_no_aprueba",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".test_respuesta_ambigua_no_aprueba()"
     },
     {
@@ -3323,7 +3358,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests_test_calcula_checklist_markdown",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".test_calcula_checklist_markdown()"
     },
     {
@@ -3335,7 +3370,7 @@
       "_origin": "ast",
       "id": "tests_test_auditor_auditortests_test_router_detecta_llamada_de_herramienta",
       "community": 3,
-      "community_name": "auditor.py",
+      "community_name": "AuditorTests",
       "norm_label": ".test_router_detecta_llamada_de_herramienta()"
     },
     {
@@ -3441,8 +3476,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_autonomy_bootstrap_test_static_web_project_validation_accepts_html_and_javascript",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "test_static_web_project_validation_accepts_html_and_javascript()"
     },
     {
@@ -3453,8 +3488,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_autonomy_bootstrap_test_changed_files_falls_back_to_workspace_listing_without_git",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 1,
+      "community_name": "__init__.py",
       "norm_label": "test_changed_files_falls_back_to_workspace_listing_without_git()"
     },
     {
@@ -3500,8 +3535,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_cli",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "test_cli.py"
     },
     {
@@ -3513,8 +3548,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_cli_clitests",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "clitests"
     },
     {
@@ -3525,8 +3560,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_cli_clitests_test_parser_accepts_repository_and_requirement",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": ".test_parser_accepts_repository_and_requirement()"
     },
     {
@@ -3537,7 +3572,7 @@
       "_origin": "ast",
       "id": "tests_test_developer",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "test_developer.py"
     },
     {
@@ -3550,7 +3585,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_fakeresponse",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "fakeresponse"
     },
     {
@@ -3563,7 +3598,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_fakemodel",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "fakemodel"
     },
     {
@@ -3575,7 +3610,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_fakemodel_bind_tools",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".bind_tools()"
     },
     {
@@ -3587,7 +3622,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_fakemodel_invoke",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".invoke()"
     },
     {
@@ -3600,7 +3635,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": "developernodetests"
     },
     {
@@ -3612,7 +3647,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_binds_safe_tools_and_increments_iteration",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_binds_safe_tools_and_increments_iteration()"
     },
     {
@@ -3624,7 +3659,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_without_model_does_not_write_files",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_without_model_does_not_write_files()"
     },
     {
@@ -3636,7 +3671,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_local_tool_node_dispatches_only_registered_tools",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_local_tool_node_dispatches_only_registered_tools()"
     },
     {
@@ -3648,7 +3683,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_rejects_blank_requirement",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_rejects_blank_requirement()"
     },
     {
@@ -3660,7 +3695,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_router_sends_tool_calls_to_executor",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_router_sends_tool_calls_to_executor()"
     },
     {
@@ -3672,7 +3707,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_router_finishes_when_model_has_no_tool_calls",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_router_finishes_when_model_has_no_tool_calls()"
     },
     {
@@ -3684,7 +3719,7 @@
       "_origin": "ast",
       "id": "tests_test_developer_developernodetests_test_developer_preserves_previous_messages_after_tool_execution",
       "community": 1,
-      "community_name": "developer.py",
+      "community_name": "__init__.py",
       "norm_label": ".test_developer_preserves_previous_messages_after_tool_execution()"
     },
     {
@@ -3766,8 +3801,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_execute_test_command",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "test_execute_test_command.py"
     },
     {
@@ -3779,8 +3814,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": "executetestcommandtests"
     },
     {
@@ -3791,8 +3826,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests_test_runs_allowed_command_without_shell",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": ".test_runs_allowed_command_without_shell()"
     },
     {
@@ -3803,8 +3838,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests_test_rejects_empty_or_invalid_arguments",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": ".test_rejects_empty_or_invalid_arguments()"
     },
     {
@@ -3815,8 +3850,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests_test_rejects_command_outside_allowlist",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": ".test_rejects_command_outside_allowlist()"
     },
     {
@@ -3827,8 +3862,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests_test_rejects_python_code_execution",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": ".test_rejects_python_code_execution()"
     },
     {
@@ -3839,8 +3874,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_execute_test_command_executetestcommandtests_test_reports_timeout",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 36,
+      "community_name": "execute_test_command",
       "norm_label": ".test_reports_timeout()"
     },
     {
@@ -4159,8 +4194,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_graphify_tools",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "test_graphify_tools.py"
     },
     {
@@ -4172,8 +4207,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": "graphifytoolstests"
     },
     {
@@ -4184,8 +4219,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests_test_query_reports_missing_graph",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": ".test_query_reports_missing_graph()"
     },
     {
@@ -4196,8 +4231,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests_test_query_invokes_project_graphify",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": ".test_query_invokes_project_graphify()"
     },
     {
@@ -4208,8 +4243,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests_test_query_reports_cli_error_and_validates_question",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": ".test_query_reports_cli_error_and_validates_question()"
     },
     {
@@ -4220,8 +4255,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests_test_shortest_path_invokes_project_graphify",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": ".test_shortest_path_invokes_project_graphify()"
     },
     {
@@ -4232,8 +4267,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_graphify_tools_graphifytoolstests_test_shortest_path_validates_symbols",
-      "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community": 6,
+      "community_name": "architect.py",
       "norm_label": ".test_shortest_path_validates_symbols()"
     },
     {
@@ -4244,7 +4279,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "test_model_factory.py"
     },
     {
@@ -4257,7 +4292,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_fakechatopenai",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "fakechatopenai"
     },
     {
@@ -4269,7 +4304,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_fakechatopenai_init",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".__init__()"
     },
     {
@@ -4282,7 +4317,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": "modelfactorytests"
     },
     {
@@ -4294,7 +4329,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_loads_openai_configuration",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_loads_openai_configuration()"
     },
     {
@@ -4306,7 +4341,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_loads_openrouter_configuration",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_loads_openrouter_configuration()"
     },
     {
@@ -4318,7 +4353,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_loads_role_specific_configuration",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_loads_role_specific_configuration()"
     },
     {
@@ -4330,7 +4365,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_creates_one_model_per_role",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_creates_one_model_per_role()"
     },
     {
@@ -4342,7 +4377,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_rejects_unknown_provider",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_rejects_unknown_provider()"
     },
     {
@@ -4354,7 +4389,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_rejects_missing_provider_key",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_rejects_missing_provider_key()"
     },
     {
@@ -4366,7 +4401,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_rejects_unknown_role",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_rejects_unknown_role()"
     },
     {
@@ -4378,7 +4413,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_creates_model_lazily",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_creates_model_lazily()"
     },
     {
@@ -4390,7 +4425,7 @@
       "_origin": "ast",
       "id": "tests_test_model_factory_modelfactorytests_test_reports_missing_runtime_dependency",
       "community": 4,
-      "community_name": "__init__.py",
+      "community_name": "load_model_config",
       "norm_label": ".test_reports_missing_runtime_dependency()"
     },
     {
@@ -4400,8 +4435,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_runner",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "test_runner.py"
     },
     {
@@ -4424,8 +4459,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_runner_test_run_request_has_safe_default_iterations",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "test_run_request_has_safe_default_iterations()"
     },
     {
@@ -4436,8 +4471,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_runner_test_run_request_rejects_invalid_input_before_execution",
-      "community": 10,
-      "community_name": "runner.py",
+      "community": 34,
+      "community_name": "FactoryRunRequest",
       "norm_label": "test_run_request_rejects_invalid_input_before_execution()"
     },
     {
@@ -4448,7 +4483,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "test_safe_factory_tools.py"
     },
     {
@@ -4461,7 +4496,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "safefactorytoolstests"
     },
     {
@@ -4473,7 +4508,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_workspace",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".workspace()"
     },
     {
@@ -4485,7 +4520,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_test_read_file_returns_utf8_content",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_read_file_returns_utf8_content()"
     },
     {
@@ -4497,7 +4532,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_test_read_file_reports_missing_and_directory",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_read_file_reports_missing_and_directory()"
     },
     {
@@ -4509,7 +4544,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_test_write_file_creates_parent_directories",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_write_file_creates_parent_directories()"
     },
     {
@@ -4521,7 +4556,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_test_directory_listing_is_sorted_and_typed",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_directory_listing_is_sorted_and_typed()"
     },
     {
@@ -4533,7 +4568,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_factory_tools_safefactorytoolstests_test_all_file_tools_reject_external_paths",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_all_file_tools_reject_external_paths()"
     },
     {
@@ -4544,7 +4579,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "test_safe_paths.py"
     },
     {
@@ -4557,7 +4592,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "safepathtests"
     },
     {
@@ -4569,7 +4604,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests_test_relative_path_inside_workspace_is_allowed",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_relative_path_inside_workspace_is_allowed()"
     },
     {
@@ -4581,7 +4616,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests_test_parent_escape_is_rejected",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_parent_escape_is_rejected()"
     },
     {
@@ -4593,7 +4628,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests_test_absolute_path_outside_workspace_is_rejected",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_absolute_path_outside_workspace_is_rejected()"
     },
     {
@@ -4605,7 +4640,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests_test_symlink_to_external_target_is_rejected_when_supported",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_symlink_to_external_target_is_rejected_when_supported()"
     },
     {
@@ -4617,7 +4652,7 @@
       "_origin": "ast",
       "id": "tests_test_safe_paths_safepathtests_test_blank_path_is_rejected",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_blank_path_is_rejected()"
     },
     {
@@ -4712,8 +4747,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_initial_state_has_safe_defaults",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 33,
+      "community_name": "create_initial_state",
       "norm_label": ".test_initial_state_has_safe_defaults()"
     },
     {
@@ -4724,7 +4759,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_invalid_progress_is_rejected",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": ".test_invalid_progress_is_rejected()"
     },
@@ -4736,7 +4771,7 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_invalid_impacted_files_are_rejected",
-      "community": 9,
+      "community": 33,
       "community_name": "create_initial_state",
       "norm_label": ".test_invalid_impacted_files_are_rejected()"
     },
@@ -4748,8 +4783,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_empty_requirement_is_rejected",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 33,
+      "community_name": "create_initial_state",
       "norm_label": ".test_empty_requirement_is_rejected()"
     },
     {
@@ -4760,8 +4795,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_thread_config_is_explicit_and_normalized",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 41,
+      "community_name": "build_thread_config",
       "norm_label": ".test_thread_config_is_explicit_and_normalized()"
     },
     {
@@ -4772,8 +4807,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_blank_thread_id_is_rejected",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 41,
+      "community_name": "build_thread_config",
       "norm_label": ".test_blank_thread_id_is_rejected()"
     },
     {
@@ -4784,8 +4819,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_persistence_uses_factory_database_path",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": ".test_persistence_uses_factory_database_path()"
     },
     {
@@ -4796,8 +4831,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_state_factorystatecontracttests_test_database_path_is_created_without_touching_database",
-      "community": 2,
-      "community_name": "FactoryStateContractTests",
+      "community": 18,
+      "community_name": "persistence.py",
       "norm_label": ".test_database_path_is_created_without_touching_database()"
     },
     {
@@ -4891,8 +4926,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_task_planner",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "test_task_planner.py"
     },
     {
@@ -4904,8 +4939,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_task_planner_taskplannertests",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": "taskplannertests"
     },
     {
@@ -4916,8 +4951,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_task_planner_taskplannertests_test_extracts_checkbox_tasks_and_status",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": ".test_extracts_checkbox_tasks_and_status()"
     },
     {
@@ -4928,8 +4963,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_task_planner_taskplannertests_test_extracts_numbered_requirements",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": ".test_extracts_numbered_requirements()"
     },
     {
@@ -4940,8 +4975,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_task_planner_taskplannertests_test_creates_fallback_task_for_plain_requirement",
-      "community": 9,
-      "community_name": "create_initial_state",
+      "community": 37,
+      "community_name": "build_tasks",
       "norm_label": ".test_creates_fallback_task_for_plain_requirement()"
     },
     {
@@ -4951,8 +4986,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_test_profiles",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "test_test_profiles.py"
     },
     {
@@ -4964,8 +4999,8 @@
       "_callable_class": true,
       "_origin": "ast",
       "id": "tests_test_test_profiles_testprofiledetectiontests",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": "testprofiledetectiontests"
     },
     {
@@ -4976,8 +5011,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_test_profiles_testprofiledetectiontests_test_detects_common_project_commands",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": ".test_detects_common_project_commands()"
     },
     {
@@ -4988,8 +5023,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_test_profiles_testprofiledetectiontests_test_detects_python_fallback",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": ".test_detects_python_fallback()"
     },
     {
@@ -5000,7 +5035,7 @@
       "_origin": "ast",
       "id": "tests_test_tool_registry",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "test_tool_registry.py"
     },
     {
@@ -5013,7 +5048,7 @@
       "_origin": "ast",
       "id": "tests_test_tool_registry_toolregistrytests",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": "toolregistrytests"
     },
     {
@@ -5025,7 +5060,7 @@
       "_origin": "ast",
       "id": "tests_test_tool_registry_toolregistrytests_test_registers_all_safe_tools_in_documented_order",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_registers_all_safe_tools_in_documented_order()"
     },
     {
@@ -5037,7 +5072,7 @@
       "_origin": "ast",
       "id": "tests_test_tool_registry_toolregistrytests_test_registry_contains_unique_callables",
       "community": 0,
-      "community_name": "safe_factory_tools.py",
+      "community_name": "validate_safe_path",
       "norm_label": ".test_registry_contains_unique_callables()"
     },
     {
@@ -5048,7 +5083,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "test_workflow.py"
     },
     {
@@ -5061,7 +5096,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakeresponse",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "fakeresponse"
     },
     {
@@ -5073,7 +5108,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakeresponse_init",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".__init__()"
     },
     {
@@ -5086,7 +5121,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_toolcallresponse",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "toolcallresponse"
     },
     {
@@ -5098,7 +5133,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_toolcallresponse_init",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".__init__()"
     },
     {
@@ -5111,7 +5146,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakemodel",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "fakemodel"
     },
     {
@@ -5123,7 +5158,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakemodel_init",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".__init__()"
     },
     {
@@ -5135,7 +5170,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakemodel_bind_tools",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".bind_tools()"
     },
     {
@@ -5147,7 +5182,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_fakemodel_invoke",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".invoke()"
     },
     {
@@ -5160,7 +5195,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_auditortoolmodel",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "auditortoolmodel"
     },
     {
@@ -5172,7 +5207,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_auditortoolmodel_init",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".__init__()"
     },
     {
@@ -5184,7 +5219,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_auditortoolmodel_bind_tools",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".bind_tools()"
     },
     {
@@ -5196,7 +5231,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_auditortoolmodel_invoke",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".invoke()"
     },
     {
@@ -5209,7 +5244,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": "workflowconstructiontests"
     },
     {
@@ -5221,7 +5256,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests_test_task_is_completed_only_after_quality_gate",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".test_task_is_completed_only_after_quality_gate()"
     },
     {
@@ -5233,7 +5268,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests_test_fallback_executes_architect_developer_auditor_and_delivery",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".test_fallback_executes_architect_developer_auditor_and_delivery()"
     },
     {
@@ -5244,8 +5279,8 @@
       "_callable": true,
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests_test_consolidates_impacted_files_and_test_results",
-      "community": 18,
-      "community_name": "workflow.py",
+      "community": 9,
+      "community_name": "test_workflow.py",
       "norm_label": ".test_consolidates_impacted_files_and_test_results()"
     },
     {
@@ -5257,7 +5292,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests_test_tool_round_limit_stops_repeated_calls",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".test_tool_round_limit_stops_repeated_calls()"
     },
     {
@@ -5269,7 +5304,7 @@
       "_origin": "ast",
       "id": "tests_test_workflow_workflowconstructiontests_test_auditor_ejecuta_herramienta_y_recibe_su_resultado",
       "community": 9,
-      "community_name": "create_initial_state",
+      "community_name": "test_workflow.py",
       "norm_label": ".test_auditor_ejecuta_herramienta_y_recibe_su_resultado()"
     },
     {
@@ -7451,7 +7486,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L363",
+      "source_location": "L433",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -7464,7 +7499,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L305",
+      "source_location": "L345",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -7945,7 +7980,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L365",
+      "source_location": "L441",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -7958,7 +7993,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L310",
+      "source_location": "L353",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -8052,7 +8087,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L388",
+      "source_location": "L494",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -8065,7 +8100,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L311",
+      "source_location": "L354",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -8388,7 +8423,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L114",
+      "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -8712,7 +8747,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L115",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -8784,7 +8819,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L139",
+      "source_location": "L156",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -9264,7 +9299,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L364",
+      "source_location": "L437",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -9277,7 +9312,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L334",
+      "source_location": "L397",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
@@ -9464,7 +9499,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L296",
+      "source_location": "L335",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_init",
@@ -9567,7 +9602,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L367",
+      "source_location": "L476",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -9615,7 +9650,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L381",
+      "source_location": "L487",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -9627,7 +9662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L335",
+      "source_location": "L398",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
@@ -9990,7 +10025,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L122",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -10108,7 +10143,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L161",
+      "source_location": "L178",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -10835,7 +10870,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L106",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -10883,7 +10918,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L73",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -10895,7 +10930,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L259",
+      "source_location": "L296",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_execute_tools_with_limit",
@@ -11273,7 +11308,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L126",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -11679,7 +11714,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L116",
+      "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -11750,7 +11785,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L140",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -11946,7 +11981,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -12006,7 +12041,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L137",
+      "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_main",
@@ -12077,7 +12112,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L113",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12149,7 +12184,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L169",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12181,6 +12216,18 @@
       "target": "src_fabrica_sw_runner_build_report"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/runner.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_runner_run_factory",
+      "target": "src_fabrica_sw_runner_py_any",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
@@ -12196,7 +12243,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L123",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12219,7 +12266,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L142",
+      "source_location": "L159",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12242,10 +12289,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L102",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_runner_rationale_102",
+      "source": "src_fabrica_sw_runner_rationale_105",
       "target": "src_fabrica_sw_runner_run_factory",
       "confidence_score": 1.0
     },
@@ -12254,7 +12301,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L135",
+      "source_location": "L146",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12266,7 +12313,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/runner.py",
-      "source_location": "L127",
+      "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_runner_run_factory",
@@ -12290,7 +12337,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L136",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_main",
@@ -12561,7 +12608,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L76",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -12762,7 +12809,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L101",
+      "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -13369,7 +13416,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L178",
+      "source_location": "L215",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_apply_quality_gate",
@@ -13381,7 +13428,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L340",
+      "source_location": "L405",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -13393,7 +13440,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L201",
+      "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_complete_current_task_node",
@@ -13405,7 +13452,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L65",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -13417,7 +13464,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L49",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_deploy_and_sync_node",
@@ -13429,7 +13476,31 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L254",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_development_progress",
+      "target": "src_fabrica_sw_state_factorystate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_emit_event",
+      "target": "src_fabrica_sw_state_factorystate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_execute_tools_with_limit",
@@ -13441,7 +13512,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L232",
+      "source_location": "L269",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_has_pending_tasks",
@@ -13464,7 +13535,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L280",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_init",
@@ -13476,7 +13547,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L299",
+      "source_location": "L338",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -13488,7 +13559,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L331",
+      "source_location": "L387",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
@@ -13500,7 +13571,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L242",
+      "source_location": "L279",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_merge_state",
@@ -13512,7 +13583,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L237",
+      "source_location": "L274",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_route_after_quality_gate",
@@ -13981,7 +14052,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L79",
+      "source_location": "L116",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14076,7 +14147,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L80",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14111,7 +14182,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L82",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14134,7 +14205,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14145,7 +14216,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L31",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14156,7 +14227,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L68",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14167,7 +14238,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L47",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14178,7 +14249,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L52",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14189,7 +14260,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L60",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit",
@@ -14212,7 +14283,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L55",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_select_repository",
@@ -14224,7 +14295,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L63",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_select_requirements_file",
@@ -14236,7 +14307,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L115",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_main",
@@ -14248,7 +14319,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L90",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_main",
@@ -14260,7 +14331,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/fabrica_sw/ui_streamlit.py",
-      "source_location": "L99",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_ui_streamlit_main",
@@ -14271,7 +14342,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L178",
+      "source_location": "L215",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14282,7 +14353,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L340",
+      "source_location": "L405",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14293,7 +14364,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L201",
+      "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14304,7 +14375,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L65",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14315,7 +14386,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L49",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14326,7 +14397,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L136",
+      "source_location": "L173",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14337,7 +14408,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L254",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow",
+      "target": "src_fabrica_sw_workflow_development_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow",
+      "target": "src_fabrica_sw_workflow_emit_event",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14348,7 +14441,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L126",
+      "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14359,7 +14452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L232",
+      "source_location": "L269",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14370,7 +14463,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L162",
+      "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14381,7 +14474,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L277",
+      "source_location": "L314",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14392,7 +14485,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L242",
+      "source_location": "L279",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14427,7 +14520,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L237",
+      "source_location": "L274",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow",
@@ -14471,25 +14564,49 @@
     },
     {
       "relation": "references",
-      "context": "generic_arg",
+      "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
       "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "source": "src_fabrica_sw_workflow_emit_event",
       "target": "src_fabrica_sw_workflow_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L344",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
+      "target": "src_fabrica_sw_workflow_emit_event",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L390",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
+      "target": "src_fabrica_sw_workflow_emit_event",
       "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L50",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_50",
-      "target": "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "source": "src_fabrica_sw_workflow_rationale_57",
+      "target": "src_fabrica_sw_workflow_emit_event",
       "confidence_score": 1.0
     },
     {
@@ -14497,7 +14614,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L178",
+      "source_location": "L215",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_apply_quality_gate",
@@ -14509,7 +14626,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L340",
+      "source_location": "L405",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -14521,7 +14638,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L201",
+      "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_complete_current_task_node",
@@ -14533,7 +14650,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L65",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14545,7 +14662,19 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L254",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "target": "src_fabrica_sw_workflow_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_execute_tools_with_limit",
@@ -14557,7 +14686,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L280",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_init",
@@ -14569,7 +14698,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L299",
+      "source_location": "L338",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14581,7 +14710,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L242",
+      "source_location": "L279",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_merge_state",
@@ -14589,23 +14718,34 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L366",
+      "source_location": "L394",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_build_autonomous_factory",
-      "target": "src_fabrica_sw_workflow_consolidate_developer_evidence",
-      "confidence_score": 0.5
+      "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
+      "target": "src_fabrica_sw_workflow_development_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/fabrica_sw/workflow.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_fabrica_sw_workflow_rationale_87",
+      "target": "src_fabrica_sw_workflow_deploy_and_sync_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L111",
+      "source_location": "L148",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14617,7 +14757,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L102",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_consolidate_developer_evidence",
@@ -14629,7 +14769,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L307",
+      "source_location": "L348",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14640,10 +14780,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L66",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_66",
+      "source": "src_fabrica_sw_workflow_rationale_103",
       "target": "src_fabrica_sw_workflow_consolidate_developer_evidence",
       "confidence_score": 1.0
     },
@@ -14664,7 +14804,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L185",
+      "source_location": "L222",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_apply_quality_gate",
@@ -14675,10 +14815,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L127",
+      "source_location": "L164",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_127",
+      "source": "src_fabrica_sw_workflow_rationale_164",
       "target": "src_fabrica_sw_workflow_extract_exit_code",
       "confidence_score": 1.0
     },
@@ -14687,7 +14827,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L147",
+      "source_location": "L184",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_detect_changed_files",
@@ -14698,10 +14838,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L137",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_137",
+      "source": "src_fabrica_sw_workflow_rationale_174",
       "target": "src_fabrica_sw_workflow_detect_changed_files",
       "confidence_score": 1.0
     },
@@ -14721,31 +14861,19 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L163",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_163",
+      "source": "src_fabrica_sw_workflow_rationale_200",
       "target": "src_fabrica_sw_workflow_list_workspace_files",
       "confidence_score": 1.0
     },
     {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L374",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_build_autonomous_factory",
-      "target": "src_fabrica_sw_workflow_apply_quality_gate",
-      "confidence_score": 0.5
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L317",
+      "source_location": "L361",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14756,10 +14884,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L179",
+      "source_location": "L216",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_179",
+      "source": "src_fabrica_sw_workflow_rationale_216",
       "target": "src_fabrica_sw_workflow_apply_quality_gate",
       "confidence_score": 1.0
     },
@@ -14768,7 +14896,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L375",
+      "source_location": "L481",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -14780,7 +14908,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L320",
+      "source_location": "L373",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14791,10 +14919,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L202",
+      "source_location": "L239",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_202",
+      "source": "src_fabrica_sw_workflow_rationale_239",
       "target": "src_fabrica_sw_workflow_complete_current_task_node",
       "confidence_score": 1.0
     },
@@ -14815,7 +14943,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L413",
+      "source_location": "L519",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -14827,7 +14955,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L321",
+      "source_location": "L374",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14839,7 +14967,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L239",
+      "source_location": "L276",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_route_after_quality_gate",
@@ -14851,7 +14979,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L403",
+      "source_location": "L509",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -14863,7 +14991,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L238",
+      "source_location": "L275",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_route_after_quality_gate",
@@ -14875,7 +15003,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L305",
+      "source_location": "L345",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -14887,7 +15015,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L334",
+      "source_location": "L397",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
@@ -14898,10 +15026,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L243",
+      "source_location": "L280",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_243",
+      "source": "src_fabrica_sw_workflow_rationale_280",
       "target": "src_fabrica_sw_workflow_merge_state",
       "confidence_score": 1.0
     },
@@ -14910,19 +15038,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L369",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_build_autonomous_factory",
-      "target": "src_fabrica_sw_workflow_execute_tools_with_limit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L273",
+      "source_location": "L310",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_execute_tools_with_limit",
@@ -14934,7 +15050,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L337",
+      "source_location": "L401",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_run_developer_cycle",
@@ -14945,10 +15061,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L255",
+      "source_location": "L292",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_255",
+      "source": "src_fabrica_sw_workflow_rationale_292",
       "target": "src_fabrica_sw_workflow_execute_tools_with_limit",
       "confidence_score": 1.0
     },
@@ -14969,7 +15085,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L354",
+      "source_location": "L420",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_build_autonomous_factory",
@@ -14980,7 +15096,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L280",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory",
@@ -14991,7 +15107,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L299",
+      "source_location": "L338",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory",
@@ -15002,7 +15118,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L331",
+      "source_location": "L387",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory",
@@ -15013,10 +15129,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L278",
+      "source_location": "L315",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_278",
+      "source": "src_fabrica_sw_workflow_rationale_315",
       "target": "src_fabrica_sw_workflow_localautonomousfactory",
       "confidence_score": 1.0
     },
@@ -15104,7 +15220,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L306",
+      "source_location": "L347",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -15117,7 +15233,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L318",
+      "source_location": "L371",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_fabrica_sw_workflow_localautonomousfactory_invoke",
@@ -15127,10 +15243,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/fabrica_sw/workflow.py",
-      "source_location": "L349",
+      "source_location": "L415",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_fabrica_sw_workflow_rationale_349",
+      "source": "src_fabrica_sw_workflow_rationale_415",
       "target": "src_fabrica_sw_workflow_build_autonomous_factory",
       "confidence_score": 1.0
     },
@@ -18429,5 +18545,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6d35b6d6e93f6d07b60d75098a28313cdc1f1c6f"
+  "built_at_commit": "d2446a255934ba063ba9854fbf75e819ea23cd99"
 }

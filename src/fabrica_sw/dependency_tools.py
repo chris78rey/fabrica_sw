@@ -17,14 +17,16 @@ _workspace: Path | None = None
 _config = AutonomyConfig.safe()
 _install_count = 0
 _last_result = ""
+_successful_install_cache: dict[tuple[str, str, int, int], str] = {}
 
 
 def configure_dependency_installer(workspace: str | Path, config: AutonomyConfig) -> None:
-    global _workspace, _config, _install_count, _last_result
+    global _workspace, _config, _install_count, _last_result, _successful_install_cache
     _workspace = validate_safe_path(workspace)
     _config = config
     _install_count = 0
     _last_result = ""
+    _successful_install_cache = {}
 
 
 def get_last_dependency_result() -> str:
@@ -102,6 +104,12 @@ def install_project_dependencies_tool(project_type: str = "", reason: str = "") 
         _last_result = "DEPENDENCY_INSTALL_SKIPPED: no hay un manifiesto compatible con dependencias."
         return _last_result
     kind, manifest = detected
+    manifest_stat = manifest.stat()
+    cache_key = (kind, str(manifest.resolve()), manifest_stat.st_mtime_ns, manifest_stat.st_size)
+    cached_result = _successful_install_cache.get(cache_key)
+    if cached_result:
+        _last_result = f"{cached_result}\nDEPENDENCY_INSTALL_CACHED: manifiesto sin cambios."
+        return _last_result
     if not _config.allow_dependency_install or _config.install_scope != "project":
         _last_result = (
             "DEPENDENCY_INSTALL_BLOCKED: el modo actual no permite instalaciones; "
@@ -130,4 +138,6 @@ def install_project_dependencies_tool(project_type: str = "", reason: str = "") 
                 return created
         command = [str(python), "-m", "pip", "install", "-r", str(manifest), "--disable-pip-version-check"]
     _last_result = _run(command, root)
+    if _last_result.startswith("DEPENDENCY_INSTALL_PASSED:"):
+        _successful_install_cache[cache_key] = _last_result
     return _last_result

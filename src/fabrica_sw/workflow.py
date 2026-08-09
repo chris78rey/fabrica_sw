@@ -8,6 +8,7 @@ inocua: deja el estado listo para que el caller invoque Git de forma explícita.
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping
+import hashlib
 import shutil
 import re
 import subprocess
@@ -99,7 +100,44 @@ def deploy_and_sync_node(state: FactoryState) -> dict[str, Any]:
     }
 
 
+def _validation_signature() -> str:
+    """Firma barata del producto para evitar validar sin cambios reales."""
+
+    digest = hashlib.sha256()
+    ignored_dirs = {".git", ".factory", "graphify-out", "__pycache__", ".venv", "node_modules"}
+    ignored_files = {"RUN_REPORT.json"}
+    for path in sorted(WORKSPACE_COMMAND_DIR.rglob("*")):
+        if not path.is_file() or any(part in ignored_dirs for part in path.parts):
+            continue
+        if path.name in ignored_files:
+            continue
+        try:
+            relative = path.relative_to(WORKSPACE_COMMAND_DIR).as_posix()
+            stat = path.stat()
+        except OSError:
+            continue
+        digest.update(f"{relative}:{stat.st_size}:{stat.st_mtime_ns}\n".encode())
+    return digest.hexdigest()
+
+
 def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
+    validation_key = _validation_signature()
+    if (
+        state.get("validation_cache_key") == validation_key
+        and state.get("test_results")
+        and state.get("source_code_draft")
+    ):
+        return {
+            "source_code_draft": state["source_code_draft"],
+            "test_results": state["test_results"],
+            "validation_available": state.get("validation_available", False),
+            "validation_passed": state.get("validation_passed", False),
+            "validation_exit_code": state.get("validation_exit_code"),
+            "changed_files": _detect_changed_files(),
+            "validation_cache_key": validation_key,
+            "tool_round_count": 0,
+        }
+
     """Consolida archivos impactados y pruebas antes de invocar al Auditor."""
 
     blueprint = state.get("architecture_blueprint", {})
@@ -145,6 +183,7 @@ def consolidate_developer_evidence(state: FactoryState) -> dict[str, Any]:
         "validation_available": validation_available,
         "validation_passed": validation_passed,
         "validation_exit_code": validation_exit_code,
+        "validation_cache_key": validation_key,
         "changed_files": _detect_changed_files(),
         "tool_round_count": 0,
         "messages": [

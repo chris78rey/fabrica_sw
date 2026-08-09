@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import re
+from functools import lru_cache
 from typing import Any
 
 
-def build_tasks(requirement: str) -> list[dict[str, Any]]:
-    """Extrae checklists o pasos numerados; si no existen, crea una tarea."""
+@lru_cache(maxsize=128)
+def _build_tasks_cached(requirement: str) -> tuple[tuple[str, str, bool], ...]:
+    """Cachea planes deterministas para requisitos repetidos."""
 
     tasks: list[dict[str, Any]] = []
     for line in requirement.splitlines():
@@ -19,9 +21,12 @@ def build_tasks(requirement: str) -> list[dict[str, Any]]:
         if match:
             tasks.append({"id": f"TASK-{len(tasks) + 1:03d}", "title": match.group(2), "completed": False})
     if not tasks:
-        title = " ".join(requirement.split()) or "Implementar y validar el requerimiento completo"
+        title = " ".join(requirement.split()) or "Implementar y validar el requerimiento"
         tasks.append({"id": "TASK-001", "title": title, "completed": False})
-    return tasks
+    return tuple((task["id"], task["title"], task["completed"]) for task in tasks)
 
 
-__all__ = ["build_tasks"]
+def build_tasks(requirement: str) -> list[dict[str, Any]]:
+    """Extrae checklists o pasos numerados; si no existen, crea una tarea."""
+
+    return [{"id": task_id, "title": title, "completed": completed} for task_id, title, completed in _build_tasks_cached(requirement)]

@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/workflow.py": {
-    "mtime": 1786245562.4707658,
-    "ast_hash": "e76ade4aa02877a9fa4340893e80c16e",
+    "mtime": 1786247457.9981182,
+    "ast_hash": "07706d86f4c826e598cb58ecc120d89a",
     "semantic_hash": ""
   },
   "tests/test_workflow.py": {
@@ -310,13 +310,13 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/runner.py": {
-    "mtime": 1786245740.0214844,
-    "ast_hash": "ee70b861bffebb2ad487e7eb2b3062fa",
+    "mtime": 1786247254.6792357,
+    "ast_hash": "b4d2bd6290bfba5cd8a77a82506060f6",
     "semantic_hash": ""
   },
   "src/fabrica_sw/ui_streamlit.py": {
-    "mtime": 1786237601.0247848,
-    "ast_hash": "cb47b7b95f392efc3b50b7037fe6ea62",
+    "mtime": 1786247339.9277692,
+    "ast_hash": "7f69f115398b4c49c2ff41ae1a024f36",
     "semantic_hash": ""
   },
   "tests/test_autonomy_bootstrap.py": {

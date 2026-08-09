@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Any
+from typing import Any, Mapping
 
 from .safe_factory_tools import graphify_query_tool, graphify_shortest_path_tool, read_file_tool
 from .state import FactoryState
@@ -76,6 +76,14 @@ def architect_node(state: FactoryState, model: Any | None = None) -> dict[str, A
     requirement = state.get("user_requirement", "")
     if not isinstance(requirement, str) or not requirement.strip():
         raise ValueError("user_requirement debe ser un texto no vacío")
+
+    existing_blueprint = state.get("architecture_blueprint")
+    if (
+        isinstance(existing_blueprint, Mapping)
+        and existing_blueprint.get("status") == "planned"
+        and existing_blueprint.get("summary")
+    ):
+        return {"architecture_blueprint": dict(existing_blueprint), "messages": []}
 
     graph_context = graphify_query_tool(
         f"Analiza archivos y dependencias impactados por este requerimiento: {requirement}"
