@@ -12,6 +12,7 @@ from fabrica_sw.workflow import (
     _execute_tools_with_limit,
     build_autonomous_factory,
     consolidate_developer_evidence,
+    complete_current_task_node,
 )
 from fabrica_sw.test_profiles import detect_test_command
 
@@ -52,6 +53,15 @@ class AuditorToolModel:
 
 
 class WorkflowConstructionTests(unittest.TestCase):
+    def test_task_is_completed_only_after_quality_gate(self):
+        state = create_initial_state("1. Crear escena\n2. Validar movimiento")
+        self.assertEqual(state["current_task_index"], 0)
+        self.assertFalse(state["tasks"][0]["completed"])
+        result = complete_current_task_node(state)
+        self.assertTrue(result["tasks"][0]["completed"])
+        self.assertEqual(result["current_task_index"], 1)
+        self.assertEqual(result["completion_percentage"], 50.0)
+
     def test_fallback_executes_architect_developer_auditor_and_delivery(self):
         app = LocalAutonomousFactory(
             FakeModel(["Blueprint listo"]),

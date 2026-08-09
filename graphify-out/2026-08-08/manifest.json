@@ -20,18 +20,18 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/__init__.py": {
-    "mtime": 1786227634.9300032,
-    "ast_hash": "f0310416d43343f9fcbf3f952941bbf5",
+    "mtime": 1786228641.4088838,
+    "ast_hash": "a00a669a8fd7b8664940195e7c2b9414",
     "semantic_hash": ""
   },
   "src/fabrica_sw/architect.py": {
-    "mtime": 1786225801.0501277,
-    "ast_hash": "4ce2be98f177efadef5d8594516b94d2",
+    "mtime": 1786230474.0592232,
+    "ast_hash": "948ae222f84c3782c0834a469e521aab",
     "semantic_hash": ""
   },
   "src/fabrica_sw/auditor.py": {
-    "mtime": 1786225465.5240717,
-    "ast_hash": "ce4b142feebccc168180bd7540534edf",
+    "mtime": 1786231912.1489322,
+    "ast_hash": "0d9730235e9214b6712d58caf16baa7f",
     "semantic_hash": ""
   },
   "src/fabrica_sw/auth_security.py": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/developer.py": {
-    "mtime": 1786225314.3897133,
-    "ast_hash": "53ebacb42c88516c9763fd70428273d1",
+    "mtime": 1786234023.5024564,
+    "ast_hash": "b35ccd1ba37d412c5c0ce411497e79fa",
     "semantic_hash": ""
   },
   "src/fabrica_sw/git_policy.py": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/safe_factory_tools.py": {
-    "mtime": 1786226566.2581697,
-    "ast_hash": "4f2ed849197c742aaec342a3c3a0dd11",
+    "mtime": 1786228641.3898828,
+    "ast_hash": "10a49109ee093e7e82f2bcb25b1fd129",
     "semantic_hash": ""
   },
   "src/fabrica_sw/safe_paths.py": {
@@ -235,48 +235,18 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/workflow.py": {
-    "mtime": 1786226037.964739,
-    "ast_hash": "4b818761f69484ec187465407fc163e7",
+    "mtime": 1786235882.6230047,
+    "ast_hash": "611e06deac3e4b054eb0ef21debf649f",
     "semantic_hash": ""
   },
   "tests/test_workflow.py": {
-    "mtime": 1786226287.2270403,
-    "ast_hash": "59f9518cff72fd3ef2bbd1ad91d749d3",
-    "semantic_hash": ""
-  },
-  "test_simulation_eerzif9k/sandbox_test_repo/auth_security.py": {
-    "mtime": 1786226270.9497023,
-    "ast_hash": "081f57b3e15765e160145e1aa858c24b",
-    "semantic_hash": ""
-  },
-  "test_simulation_qyxgws9z/sandbox_test_repo/auth_security.py": {
-    "mtime": 1786226278.588513,
-    "ast_hash": "081f57b3e15765e160145e1aa858c24b",
-    "semantic_hash": ""
-  },
-  "test_simulation_zejrakvt/sandbox_test_repo/auth_security.py": {
-    "mtime": 1786226221.7713518,
-    "ast_hash": "081f57b3e15765e160145e1aa858c24b",
-    "semantic_hash": ""
-  },
-  "test_simulation_eerzif9k/sandbox_test_repo/requirements_checklist.txt": {
-    "mtime": 1786226270.9487033,
-    "ast_hash": "061ba166d0713cc7f5516cf5d307a043",
-    "semantic_hash": ""
-  },
-  "test_simulation_qyxgws9z/sandbox_test_repo/requirements_checklist.txt": {
-    "mtime": 1786226278.8728454,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": ""
-  },
-  "test_simulation_zejrakvt/sandbox_test_repo/requirements_checklist.txt": {
-    "mtime": 1786226221.7713518,
-    "ast_hash": "061ba166d0713cc7f5516cf5d307a043",
+    "mtime": 1786234005.4550087,
+    "ast_hash": "d72cf4f1bf7bb05200176387d2c14443",
     "semantic_hash": ""
   },
   "pyproject.toml": {
-    "mtime": 1786227753.1753998,
-    "ast_hash": "cc3e0461ccaa69202059157438525cda",
+    "mtime": 1786228858.2558336,
+    "ast_hash": "b03bbc469677e1cdd0401bf01d8c1195",
     "semantic_hash": ""
   },
   "README.md": {
@@ -285,23 +255,43 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/model_factory.py": {
-    "mtime": 1786227753.1744,
-    "ast_hash": "4c3baf6567233ca34c45a16c6225ed9f",
+    "mtime": 1786232452.83718,
+    "ast_hash": "28950e7b47636b9c005a582fc9966b20",
     "semantic_hash": ""
   },
   "tests/test_model_factory.py": {
-    "mtime": 1786227634.9300032,
-    "ast_hash": "763bbc475fc908f2cd5d648b3281bcbc",
+    "mtime": 1786228727.153161,
+    "ast_hash": "34f32a6484845b5cc0218be7344df771",
     "semantic_hash": ""
   },
   "src/fabrica_sw/cli.py": {
-    "mtime": 1786227753.1764023,
-    "ast_hash": "90bba4eb13a21f0be288d1742f2fbb41",
+    "mtime": 1786235882.624005,
+    "ast_hash": "30261d33a2bed7b21d6d891afbfda8ea",
     "semantic_hash": ""
   },
   "tests/test_cli.py": {
     "mtime": 1786227779.7651584,
     "ast_hash": "74e68341c051270311992306c71553ba",
+    "semantic_hash": ""
+  },
+  "src/fabrica_sw/task_planner.py": {
+    "mtime": 1786235991.6963494,
+    "ast_hash": "f95dbf87f993521d780795e6454cacc2",
+    "semantic_hash": ""
+  },
+  "src/fabrica_sw/test_profiles.py": {
+    "mtime": 1786235882.6220052,
+    "ast_hash": "00342cc82b2cda3af2f3f134ca1b35b2",
+    "semantic_hash": ""
+  },
+  "tests/test_task_planner.py": {
+    "mtime": 1786235971.5667799,
+    "ast_hash": "4446ba95549d4ef66d0f1dc53278389f",
+    "semantic_hash": ""
+  },
+  "tests/test_test_profiles.py": {
+    "mtime": 1786228668.586043,
+    "ast_hash": "9b2beea789e9c19fc77eea71177b53fb",
     "semantic_hash": ""
   }
 }

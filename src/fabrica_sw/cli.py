@@ -36,8 +36,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--requirement",
-        required=True,
         help="Requerimiento que debe analizar e implementar la fábrica.",
+    )
+    parser.add_argument(
+        "--requirements-file",
+        type=Path,
+        help="Archivo UTF-8 con el requerimiento completo.",
     )
     parser.add_argument(
         "--max-iterations",
@@ -55,6 +59,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         raise SystemExit(f"El repositorio no existe o no es un directorio: {repository}")
     if args.max_iterations <= 0:
         raise SystemExit("--max-iterations debe ser mayor que cero.")
+    if bool(args.requirement) == bool(args.requirements_file):
+        raise SystemExit("Debe indicar exactamente uno de --requirement o --requirements-file.")
+    if args.requirements_file is not None:
+        requirements_file = args.requirements_file.expanduser().resolve()
+        try:
+            requirement = requirements_file.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            raise SystemExit(f"No se pudo leer --requirements-file: {exc}") from exc
+    else:
+        requirement = args.requirement
 
     # Debe establecerse antes de importar las herramientas que calculan
     # WORKSPACE_DIR al importar el módulo.
@@ -64,6 +78,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     from .model_factory import ModelFactoryError, create_models
     from .state import create_initial_state
     from .developer import MAX_TOOL_ROUNDS
+    from .task_planner import build_tasks
     from .workflow import build_autonomous_factory
 
     try:
@@ -77,25 +92,33 @@ def main(argv: Sequence[str] | None = None) -> int:
         # Un flujo con herramientas puede superar 25 nodos aunque estÃ© acotado.
         recursion_limit = max(100, 5 + args.max_iterations * (2 * MAX_TOOL_ROUNDS + 8))
         final_state = factory.invoke(
-            create_initial_state(args.requirement),
+            create_initial_state(requirement),
             config={"recursion_limit": recursion_limit},
         )
     except (ModelFactoryError, ValueError) as exc:
         raise SystemExit(f"Ejecución no iniciada: {exc}") from exc
 
-    print(
-        json.dumps(
-            {
-                "repository": str(repository),
-                "approved": final_state.get("is_approved", False),
-                "completion_percentage": final_state.get("completion_percentage", 0.0),
-                "iteration_count": final_state.get("iteration_count", 0),
-                "audit_report": final_state.get("audit_report", ""),
-            },
-            ensure_ascii=False,
-            indent=2,
+    report = {
+        "status": "PASSED" if final_state.get("is_approved", False) else "BLOCKED",
+        "repository": str(repository),
+        "approved": final_state.get("is_approved", False),
+        "validation_available": final_state.get("validation_available", False),
+        "validation_passed": final_state.get("validation_passed", False),
+        "validation_exit_code": final_state.get("validation_exit_code"),
+        "changed_files": final_state.get("changed_files", []),
+        "completion_percentage": final_state.get("completion_percentage", 0.0),
+        "iteration_count": final_state.get("iteration_count", 0),
+        "audit_report": final_state.get("audit_report", ""),
+        "tasks": build_tasks(requirement),
+    }
+    try:
+        (repository / "RUN_REPORT.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
         )
-    )
+    except OSError as exc:
+        raise SystemExit(f"No se pudo guardar RUN_REPORT.json: {exc}") from exc
+    print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if final_state.get("is_approved", False) else 1
 
 

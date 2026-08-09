@@ -43,6 +43,12 @@ class FactoryStateContractTests(unittest.TestCase):
                 "iteration_count",
                 "tool_round_count",
                 "completion_percentage",
+                "tasks",
+                "current_task_index",
+                "validation_available",
+                "validation_passed",
+                "validation_exit_code",
+                "changed_files",
             },
         )
 

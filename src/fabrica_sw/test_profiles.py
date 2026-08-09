@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import shutil
 from pathlib import Path
 
 
@@ -33,4 +35,16 @@ def detect_test_command(workspace_dir: Path) -> list[str] | None:
     return None
 
 
-__all__ = ["detect_test_command"]
+def resolve_test_executable(command: list[str], workspace_dir: Path) -> str | None:
+    """Resuelve ejecutables, permitiendo configurar Godot fuera del PATH."""
+
+    if not command:
+        return None
+    if command[0].lower() == "godot":
+        configured = os.environ.get("GODOT_BIN", "").strip().strip('"')
+        if configured and Path(configured).is_file():
+            return configured
+    return shutil.which(command[0], path=os.environ.get("PATH"))
+
+
+__all__ = ["detect_test_command", "resolve_test_executable"]

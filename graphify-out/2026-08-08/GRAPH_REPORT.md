@@ -1,28 +1,33 @@
-# Graph Report - .  (2026-08-08)
+# Graph Report - fabrica_sw  (2026-08-08)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 59 files · ~27,113 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 419 nodes · 782 edges · 34 communities (24 shown, 10 thin omitted)
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 56 edges (avg confidence: 0.67)
+- 459 nodes · 878 edges · 30 communities (20 shown, 10 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 58 edges (avg confidence: 0.66)
 - Token cost: 0 input · 0 output
 
+## Graph Freshness
+- Built from commit: `61842af4`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
 ## Community Hubs (Navigation)
-- __init__.py
-- FactoryStateContractTests
 - safe_factory_tools.py
-- ensure_commit_approved
-- load_model_config
-- architect_node
+- workflow.py
+- create_initial_state
 - auditor.py
+- __init__.py
+- ensure_commit_approved
+- architect.py
 - Plan de implementación de la fábrica segura
 - github_secure_push_tool
-- .test_auditor_ejecuta_herramienta_y_recibe_su_resultado
-- test_workflow_cycle.py
+- test_workflow.py
+- cli.py
 - validate_password_complexity
 - inst.md
-- execute_test_command
 - 2. Prompts de Sistema para los Agentes en LangGraph
 - Persistencia, recuperación y límite de iteraciones
 - Fábrica autónoma: corpus dividido para Graphify
@@ -39,20 +44,18 @@
 - fabrica-sw
 
 ## God Nodes (most connected - your core abstractions)
-1. `FactoryState` - 27 edges
+1. `FactoryState` - 28 edges
 2. `Plan de implementación de la fábrica segura` - 21 edges
-3. `FactoryStateContractTests` - 20 edges
-4. `create_initial_state()` - 18 edges
-5. `architect_node()` - 17 edges
-6. `auditor_node()` - 17 edges
-7. `validate_safe_path()` - 17 edges
-8. `developer_node()` - 16 edges
-9. `build_autonomous_factory()` - 16 edges
-10. `github_secure_push_tool()` - 14 edges
+3. `create_initial_state()` - 20 edges
+4. `FactoryStateContractTests` - 20 edges
+5. `build_autonomous_factory()` - 18 edges
+6. `architect_node()` - 17 edges
+7. `auditor_node()` - 17 edges
+8. `developer_node()` - 17 edges
+9. `load_model_config()` - 17 edges
+10. `validate_safe_path()` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `FactoryStateContractTests` --uses--> `ArchitectureBlueprint`  [INFERRED]
-  tests/test_state.py → src/fabrica_sw/state.py
 - `FactoryStateContractTests` --uses--> `FactoryState`  [INFERRED]
   tests/test_state.py → src/fabrica_sw/state.py
 - `AuditorToolModel` --uses--> `LocalAutonomousFactory`  [INFERRED]
@@ -61,39 +64,41 @@
   tests/test_workflow.py → src/fabrica_sw/workflow.py
 - `FakeResponse` --uses--> `LocalAutonomousFactory`  [INFERRED]
   tests/test_workflow.py → src/fabrica_sw/workflow.py
+- `ToolCallResponse` --uses--> `LocalAutonomousFactory`  [INFERRED]
+  tests/test_workflow.py → src/fabrica_sw/workflow.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 10 thin omitted)
+## Communities (30 total, 10 thin omitted)
 
-### Community 0 - "__init__.py"
-Cohesion: 0.07
-Nodes (41): auditor_should_continue_router(), Envía las llamadas del Auditor al ejecutor antes de aplicar la política., build_tool_executor_node(), _call_data(), developer_node(), LocalToolNode, _message_content(), Any (+33 more)
-
-### Community 1 - "FactoryStateContractTests"
+### Community 0 - "safe_factory_tools.py"
 Cohesion: 0.06
-Nodes (26): build_persistence_config(), build_thread_config(), open_checkpoint_saver(), Any, Path, Resuelve la base SQLite y crea solo su directorio padre., Construye la configuración que LangGraph usa para reanudar un hilo., Abre un ``SqliteSaver`` para compilar un grafo con checkpoints. (+18 more)
+Nodes (25): PathLike, execute_test_command(), graphify_query_tool(), graphify_shortest_path_tool(), _is_safe_command(), list_directory_tool(), Herramientas de archivos restringidas al workspace de la fábrica., Consulta el grafo de conocimiento de Graphify sin cargar el código completo. (+17 more)
 
-### Community 2 - "safe_factory_tools.py"
+### Community 1 - "workflow.py"
 Cohesion: 0.08
-Nodes (20): PathLike, graphify_query_tool(), graphify_shortest_path_tool(), list_directory_tool(), Herramientas de archivos restringidas al workspace de la fábrica., Consulta el grafo de conocimiento de Graphify sin cargar el código completo., Encuentra el camino más corto de dependencias entre dos símbolos., Lee un archivo de texto UTF-8 dentro del workspace seguro. (+12 more)
+Nodes (42): auditor_should_continue_router(), Envía las llamadas del Auditor al ejecutor antes de aplicar la política., build_tool_executor_node(), _call_data(), developer_node(), LocalToolNode, _message_content(), Any (+34 more)
 
-### Community 3 - "ensure_commit_approved"
+### Community 2 - "create_initial_state"
+Cohesion: 0.06
+Nodes (33): RuntimeError, build_persistence_config(), build_thread_config(), open_checkpoint_saver(), Any, Path, Configuración de persistencia durable para la fábrica., Resuelve la base SQLite y crea solo su directorio padre. (+25 more)
+
+### Community 3 - "auditor.py"
+Cohesion: 0.08
+Nodes (18): auditor_node(), _calculate_completion_percentage(), _extract_audit_decision(), Any, Nodo de auditoría segura para validar el trabajo del desarrollador., Extrae una decisión sin aprobar por accidente una respuesta ambigua., Lee el checklist conocido sin salir del workspace seguro., Audita el estado actual y devuelve aprobación, informe y avance. (+10 more)
+
+### Community 4 - "__init__.py"
+Cohesion: 0.13
+Nodes (22): ModelRole, Componentes compartidos de la fábrica de software., create_model(), create_models(), _environment(), _load_chat_openai(), load_model_config(), ModelConfig (+14 more)
+
+### Community 5 - "ensure_commit_approved"
 Cohesion: 0.09
 Nodes (18): _audit_and_measure_progress(), main(), Simulación local del flujo de la fábrica, sin commit ni push reales., _write_initial_files(), ensure_commit_approved(), Any, Políticas de autorización para operaciones Git de la fábrica., Permite continuar solo con una aprobación booleana explícita. La operación Git… (+10 more)
 
-### Community 4 - "load_model_config"
-Cohesion: 0.15
-Nodes (19): RuntimeError, create_model(), _environment(), _load_chat_openai(), load_model_config(), ModelConfig, ModelConfigurationError, ModelFactoryError (+11 more)
-
-### Community 5 - "architect_node"
+### Community 6 - "architect.py"
 Cohesion: 0.14
-Nodes (14): architect_node(), _as_string_list(), _build_blueprint(), _extract_json_object(), Any, Nodo de arquitectura con consulta previa al grafo de Graphify., Extrae un objeto JSON aunque el modelo lo envuelva en markdown., Consulta Graphify y produce un blueprint arquitectónico estructurado. (+6 more)
-
-### Community 6 - "auditor.py"
-Cohesion: 0.13
-Nodes (13): auditor_node(), _calculate_completion_percentage(), _extract_audit_decision(), Any, Nodo de auditoría segura para validar el trabajo del desarrollador., Extrae una decisión sin aprobar por accidente una respuesta ambigua., Lee el checklist conocido sin salir del workspace seguro., Audita el estado actual y devuelve aprobación, informe y avance. (+5 more)
+Nodes (16): architect_node(), _as_string_list(), _build_blueprint(), _extract_json_object(), _infer_impacted_files(), Any, Nodo de arquitectura con consulta previa al grafo de Graphify., Extrae un objeto JSON aunque el modelo lo envuelva en markdown. (+8 more)
 
 ### Community 7 - "Plan de implementación de la fábrica segura"
 Cohesion: 0.09
@@ -103,13 +108,13 @@ Nodes (21): 0. Base del proyecto, 1. Arquitectura y estado persistente, 2. Herra
 Cohesion: 0.21
 Nodes (11): github_secure_push_tool(), _mask_token(), Any, Push seguro a GitHub después de una aprobación y un commit local., Crea un helper efímero que devuelve el token únicamente desde el entorno., Publica el commit actual en GitHub sin exponer el token en comandos o logs., _validate_ref(), _write_askpass_helper() (+3 more)
 
-### Community 9 - ".test_auditor_ejecuta_herramienta_y_recibe_su_resultado"
-Cohesion: 0.16
-Nodes (5): AuditorToolModel, FakeModel, FakeResponse, ToolCallResponse, WorkflowConstructionTests
+### Community 9 - "test_workflow.py"
+Cohesion: 0.10
+Nodes (12): detect_test_command(), Path, Detección conservadora de comandos de verificación por tipo de proyecto., Devuelve un comando seguro y portable para el proyecto detectado. La detección…, Resuelve ejecutables, permitiendo configurar Godot fuera del PATH., resolve_test_executable(), TestProfileDetectionTests, AuditorToolModel (+4 more)
 
-### Community 10 - "test_workflow_cycle.py"
-Cohesion: 0.21
-Nodes (5): AuditorModel, DeveloperModel, FakeResponse, run_cycle(), WorkflowCycleTests
+### Community 10 - "cli.py"
+Cohesion: 0.13
+Nodes (13): ArgumentParser, build_parser(), _configure_loaded_workspace(), main(), Path, Punto de entrada para ejecutar la fábrica sobre un repositorio local., Sincroniza las constantes importadas antes de procesar ``--repository``., build_tasks() (+5 more)
 
 ### Community 11 - "validate_password_complexity"
 Cohesion: 0.22
@@ -119,23 +124,19 @@ Nodes (6): hash_password_secure(), Controles reutilizables para credenciales., G
 Cohesion: 0.17
 Nodes (11): 1. Reemplazo de Componentes (De Buzz a Puro Python), 2. Prompts de Sistema para los Agentes en LangGraph, 3. Blueprint de Implementación en Python (LangGraph), 4. Conectando Graphify en Modo Autónomo y Bajo Consumo, Agente 1: El Arquitecto Contextual (`@Architect`), Agente 2: El Desarrollador de Software (`@Developer`), Agente 3: El Auditor de Seguridad e Integridad (`@Auditor`), Estructura técnica de `developer_node.py`: (+3 more)
 
-### Community 13 - "execute_test_command"
-Cohesion: 0.25
-Nodes (5): execute_test_command(), _is_safe_command(), Permite perfiles de verificación, no intérpretes ni operaciones mutantes., Ejecuta un comando permitido sin shell y con timeout de 30 segundos., ExecuteTestCommandTests
-
-### Community 14 - "2. Prompts de Sistema para los Agentes en LangGraph"
+### Community 13 - "2. Prompts de Sistema para los Agentes en LangGraph"
 Cohesion: 0.40
 Nodes (4): 2. Prompts de Sistema para los Agentes en LangGraph, Agente 1: El Arquitecto Contextual (`@Architect`), Agente 2: El Desarrollador de Software (`@Developer`), Agente 3: El Auditor de Seguridad e Integridad (`@Auditor`)
 
-### Community 15 - "Persistencia, recuperación y límite de iteraciones"
+### Community 14 - "Persistencia, recuperación y límite de iteraciones"
 Cohesion: 0.50
 Nodes (3): Guardar y reanudar una ejecución, Persistencia, recuperación y límite de iteraciones, Política del flujo
 
-### Community 16 - "Fábrica autónoma: corpus dividido para Graphify"
+### Community 15 - "Fábrica autónoma: corpus dividido para Graphify"
 Cohesion: 0.50
 Nodes (3): Fábrica autónoma: corpus dividido para Graphify, Hook de sincronización, Orden recomendado
 
-### Community 17 - "Fábrica de Software Segura"
+### Community 16 - "Fábrica de Software Segura"
 Cohesion: 0.50
 Nodes (3): Desarrollo, Estado, Fábrica de Software Segura
 
@@ -147,17 +148,17 @@ Nodes (3): Desarrollo, Estado, Fábrica de Software Segura
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `FactoryState` connect `__init__.py` to `FactoryStateContractTests`, `architect_node`, `auditor.py`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `github_secure_push_tool()` connect `github_secure_push_tool` to `__init__.py`, `FactoryStateContractTests`, `ensure_commit_approved`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **Why does `LocalAutonomousFactory` connect `__init__.py` to `.test_auditor_ejecuta_herramienta_y_recibe_su_resultado`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `create_initial_state()` connect `create_initial_state` to `workflow.py`, `auditor.py`, `__init__.py`, `test_workflow.py`, `cli.py`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `FactoryState` connect `workflow.py` to `create_initial_state`, `auditor.py`, `__init__.py`, `architect.py`?**
+  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `github_secure_push_tool()` connect `github_secure_push_tool` to `create_initial_state`, `__init__.py`, `ensure_commit_approved`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `FactoryState` (e.g. with `LocalToolNode` and `LocalAutonomousFactory`) actually correct?**
   _`FactoryState` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 2 inferred relationships involving `FactoryStateContractTests` (e.g. with `ArchitectureBlueprint` and `FactoryState`) actually correct?**
   _`FactoryStateContractTests` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `build_autonomous_factory()` (e.g. with `should_continue_router()` and `_apply_quality_gate()`) actually correct?**
+  _`build_autonomous_factory()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `fabrica-sw`, `Estado`, `Desarrollo` to the rest of the system?**
   _47 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `__init__.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.07490079365079365 - nodes in this community are weakly interconnected._

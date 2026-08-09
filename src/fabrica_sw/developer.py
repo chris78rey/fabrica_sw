@@ -69,6 +69,14 @@ def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, A
         }
 
     blueprint = state.get("architecture_blueprint", {})
+    tasks = state.get("tasks", [])
+    task_index = state.get("current_task_index", 0)
+    current_task = tasks[task_index] if tasks and 0 <= task_index < len(tasks) else None
+    task_context = (
+        f"\n\nTarea actual ({current_task.get('id')}): {current_task.get('title')}"
+        if isinstance(current_task, Mapping)
+        else ""
+    )
     history = list(state.get("messages", []))
     if history:
         messages = [{"role": "system", "content": DEVELOPER_SYSTEM_PROMPT}, *history]
@@ -80,7 +88,7 @@ def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, A
             messages.append(
                 {
                     "role": "user",
-                    "content": f"Requerimiento: {requirement}\n\nArquitectura aprobada:\n{blueprint}",
+                    "content": f"Requerimiento: {requirement}\n\nArquitectura aprobada:\n{blueprint}{task_context}",
                 }
             )
     else:
@@ -88,7 +96,7 @@ def developer_node(state: FactoryState, model: Any | None = None) -> dict[str, A
             {"role": "system", "content": DEVELOPER_SYSTEM_PROMPT},
             {
                 "role": "user",
-                "content": f"Requerimiento: {requirement}\n\nArquitectura aprobada:\n{blueprint}",
+                "content": f"Requerimiento: {requirement}\n\nArquitectura aprobada:\n{blueprint}{task_context}",
             },
         ]
 
