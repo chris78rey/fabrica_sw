@@ -46,6 +46,43 @@ from .workflow_policy import (
 )
 
 
+def _emit_event(
+    on_event: Callable[[dict[str, Any]], None] | None,
+    stage: str,
+    message: str,
+    progress: int,
+    state: FactoryState | None = None,
+    **details: Any,
+) -> None:
+    """Publica un hito sin convertir el callback de UI en parte del estado."""
+
+    if on_event is None:
+        return
+    payload: dict[str, Any] = {
+        "stage": stage,
+        "message": message,
+        "progress": max(0, min(100, int(progress))),
+    }
+    if state is not None:
+        tasks = state.get("tasks", [])
+        task_index = state.get("current_task_index", 0)
+        if isinstance(tasks, list) and isinstance(task_index, int) and 0 <= task_index < len(tasks):
+            task = tasks[task_index]
+            if isinstance(task, Mapping):
+                payload["task_id"] = task.get("id", "")
+                payload["task"] = task.get("title", "")
+        payload["iteration"] = state.get("iteration_count", 0)
+    payload.update(details)
+    on_event(payload)
+
+
+def _development_progress(state: FactoryState) -> int:
+    iteration = state.get("iteration_count", 0)
+    if not isinstance(iteration, int) or iteration < 0:
+        iteration = 0
+    return min(70, 30 + iteration * 10)
+
+
 def deploy_and_sync_node(state: FactoryState) -> dict[str, Any]:
     """Marca la entrega como preparada sin producir efectos externos."""
 
@@ -285,12 +322,14 @@ class LocalAutonomousFactory:
         *,
         max_iterations: int = MAX_ITERATIONS,
         deploy_node: Callable[[FactoryState], Mapping[str, Any]] = deploy_and_sync_node,
+        on_event: Callable[[dict[str, Any]], None] | None = None,
     ) -> None:
         self.architect_model = architect_model
         self.developer_model = developer_model
         self.auditor_model = auditor_model
         self.max_iterations = max_iterations
         self.deploy_node = deploy_node
+        self.on_event = on_event
         # El fallback debe aceptar respuestas simples de modelos locales y no
         # depender del contrato estricto AIMessage de LangGraph ToolNode.
         self.tool_node = LocalToolNode(SAFE_DEVELOPMENT_TOOLS)
@@ -302,39 +341,65 @@ class LocalAutonomousFactory:
         config: Mapping[str, Any] | None = None,
     ) -> FactoryState:
         del config
+        _emit_event(self.on_event, "architect", "Analizando arquitectura y Graphify", 15, state)
         current = _merge_state(state, architect_node(state, self.architect_model))
+        _emit_event(self.on_event, "architect", "Arquitectura generada", 20, current)
         current = self._run_developer_cycle(current)
         current = _merge_state(current, consolidate_developer_evidence(current))
+        _emit_event(self.on_event, "validation", "Validaciones ejecutadas", 80, current)
 
         while True:
+            _emit_event(self.on_event, "audit", "Auditoría en curso", 85, current)
             current = _merge_state(current, auditor_node(current, self.auditor_model))
             if auditor_should_continue_router(current) == ROUTE_AUDIT_EXECUTE_TOOLS:
                 current = _merge_state(
                     current,
                     _execute_tools_with_limit(current, self.audit_tool_node),
                 )
+                _emit_event(self.on_event, "audit", "Herramientas de auditoría ejecutadas", 88, current)
                 continue
             current = _merge_state(current, _apply_quality_gate(current))
+            _emit_event(
+                self.on_event,
+                "audit",
+                "Auditoría terminada" if current.get("is_approved") else "Auditoría bloqueada",
+                90 if current.get("is_approved") else 90,
+                current,
+                validation_passed=current.get("validation_passed", False),
+                blocked=not current.get("is_approved", False),
+            )
             route = evaluate_workflow_router(current, max_iterations=self.max_iterations)
             if route == ROUTE_DEPLOY:
                 current = _merge_state(current, complete_current_task_node(current))
                 if _has_pending_tasks(current):
                     current = self._run_developer_cycle(current)
                     current = _merge_state(current, consolidate_developer_evidence(current))
+                    _emit_event(self.on_event, "validation", "Validaciones ejecutadas", 80, current)
                     continue
+                _emit_event(self.on_event, "git", "Recuperación y entrega preparadas", 95, current)
                 return _merge_state(current, self.deploy_node(current))
             if route == ROUTE_STOP:
                 return current
             current = self._run_developer_cycle(current)
             current = _merge_state(current, consolidate_developer_evidence(current))
+            _emit_event(self.on_event, "validation", "Validaciones ejecutadas", 80, current)
 
     def _run_developer_cycle(self, state: FactoryState) -> FactoryState:
         current = state
         while True:
+            _emit_event(
+                self.on_event,
+                "developer",
+                "Desarrollando la tarea activa",
+                _development_progress(current),
+                current,
+            )
             current = _merge_state(current, developer_node(current, self.developer_model))
             if should_continue_router(current) != ROUTE_EXECUTE_TOOLS:
+                _emit_event(self.on_event, "developer", "Desarrollo de la iteración terminado", _development_progress(current), current)
                 return current
             current = _merge_state(current, _execute_tools_with_limit(current, self.tool_node))
+            _emit_event(self.on_event, "developer", "Última acción: herramienta ejecutada", _development_progress(current), current)
 
 
 def build_autonomous_factory(
@@ -345,6 +410,7 @@ def build_autonomous_factory(
     max_iterations: int = MAX_ITERATIONS,
     deploy_node: Callable[[FactoryState], Mapping[str, Any]] = deploy_and_sync_node,
     checkpointer: Any | None = None,
+    on_event: Callable[[dict[str, Any]], None] | None = None,
 ) -> Any:
     """Construye el flujo completo y selecciona LangGraph o el fallback local."""
 
@@ -357,21 +423,61 @@ def build_autonomous_factory(
             auditor_model,
             max_iterations=max_iterations,
             deploy_node=deploy_node,
+            on_event=on_event,
         )
 
     builder = StateGraph(FactoryState)
-    builder.add_node("architect", lambda state: architect_node(state, architect_model))
-    builder.add_node("developer", lambda state: developer_node(state, developer_model))
-    builder.add_node("auditor", lambda state: auditor_node(state, auditor_model))
-    builder.add_node("consolidate_evidence", consolidate_developer_evidence)
+
+    def architect_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(on_event, "architect", "Analizando arquitectura y Graphify", 15, state)
+        return architect_node(state, architect_model)
+
+    def developer_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(on_event, "developer", "Desarrollando la tarea activa", _development_progress(state), state)
+        return developer_node(state, developer_model)
+
+    def auditor_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(on_event, "audit", "Auditoría en curso", 85, state)
+        return auditor_node(state, auditor_model)
+
+    def consolidate_evidence_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(on_event, "validation", "Ejecutando validaciones", 75, state)
+        return consolidate_developer_evidence(state)
+
+    def execute_tools_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(
+            on_event,
+            "developer",
+            "Última acción: ejecutando herramienta",
+            _development_progress(state),
+            state,
+        )
+        return _execute_tools_with_limit(state, tool_node)
+
+    def audit_tools_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(on_event, "audit", "Ejecutando herramienta de auditoría", 88, state)
+        return _execute_tools_with_limit(state, audit_tool_node)
+
+    def quality_gate_with_events(state: FactoryState) -> Mapping[str, Any]:
+        _emit_event(
+            on_event,
+            "audit",
+            "Auditoría terminada" if state.get("is_approved") else "Auditoría bloqueada",
+            90,
+            state,
+            blocked=not state.get("is_approved", False),
+        )
+        return _apply_quality_gate(state)
+
+    builder.add_node("architect", architect_with_events)
+    builder.add_node("developer", developer_with_events)
+    builder.add_node("auditor", auditor_with_events)
+    builder.add_node("consolidate_evidence", consolidate_evidence_with_events)
     tool_node = build_tool_executor_node()
     audit_tool_node = build_tool_executor_node(AUDITOR_TOOLS)
-    builder.add_node("execute_tools", lambda state: _execute_tools_with_limit(state, tool_node))
-    builder.add_node(
-        "audit_execute_tools",
-        lambda state: _execute_tools_with_limit(state, audit_tool_node),
-    )
-    builder.add_node("quality_gate", _apply_quality_gate)
+    builder.add_node("execute_tools", execute_tools_with_events)
+    builder.add_node("audit_execute_tools", audit_tools_with_events)
+    builder.add_node("quality_gate", quality_gate_with_events)
     builder.add_node("complete_task", complete_current_task_node)
     builder.add_node("deploy_and_sync", deploy_node)
     builder.set_entry_point("architect")

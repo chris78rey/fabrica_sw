@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/developer.py": {
-    "mtime": 1786234023.5024564,
-    "ast_hash": "b35ccd1ba37d412c5c0ce411497e79fa",
+    "mtime": 1786236177.4735377,
+    "ast_hash": "d5ee2772e11d092dd43a5356c567bc75",
     "semantic_hash": ""
   },
   "src/fabrica_sw/git_policy.py": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/state.py": {
-    "mtime": 1786225770.983929,
-    "ast_hash": "5fb4c4010231e2a3d8372e225c1db594",
+    "mtime": 1786236177.4725368,
+    "ast_hash": "207f049d7996eba7253d2a8000d1bdaf",
     "semantic_hash": ""
   },
   "src/fabrica_sw/workflow_policy.py": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "tests/test_state.py": {
-    "mtime": 1786225138.5715709,
-    "ast_hash": "11d1088b974290362f7c1a9f802d0b86",
+    "mtime": 1786236219.778938,
+    "ast_hash": "5160664eec2c915619c2730ad867c5fe",
     "semantic_hash": ""
   },
   "tests/test_tool_registry.py": {
@@ -235,13 +235,13 @@
     "semantic_hash": ""
   },
   "src/fabrica_sw/workflow.py": {
-    "mtime": 1786235882.6230047,
-    "ast_hash": "611e06deac3e4b054eb0ef21debf649f",
+    "mtime": 1786236200.808825,
+    "ast_hash": "b9d9f913631fd1667a6de782c0a3e4a9",
     "semantic_hash": ""
   },
   "tests/test_workflow.py": {
-    "mtime": 1786234005.4550087,
-    "ast_hash": "d72cf4f1bf7bb05200176387d2c14443",
+    "mtime": 1786236200.809824,
+    "ast_hash": "777131ddf2db5063e0a462b51977b921",
     "semantic_hash": ""
   },
   "pyproject.toml": {

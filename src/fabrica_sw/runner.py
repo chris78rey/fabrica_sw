@@ -6,7 +6,7 @@ import json
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from .autonomy import AutonomyConfig
 from .dependency_tools import configure_dependency_installer, get_last_dependency_result
@@ -98,8 +98,15 @@ def _restore_deleted_files(repository: Path, snapshot: dict[str, bytes]) -> list
     return deleted
 
 
-def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
+def run_factory(
+    request: FactoryRunRequest,
+    on_event: Callable[[dict[str, Any]], None] | None = None,
+) -> FactoryRunResult:
     """Ejecuta la fábrica y guarda RUN_REPORT.json en el repositorio."""
+
+    def emit(stage: str, message: str, progress: int, **details: Any) -> None:
+        if on_event is not None:
+            on_event({"stage": stage, "message": message, "progress": progress, **details})
 
     repository = request.repository.expanduser().resolve()
     if not repository.is_dir():
@@ -109,6 +116,7 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
     if not request.requirement or not request.requirement.strip():
         raise ValueError("El requerimiento no puede estar vacío.")
 
+    emit("preparing", "Preparando el repositorio", 5)
     os.environ["FABRICA_WORKSPACE_DIR"] = str(repository)
     configure_loaded_workspace(repository)
     autonomy = AutonomyConfig.from_env()
@@ -121,19 +129,28 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
     if autonomy.mode == "full":
         git_init_result = ensure_git_repository(repository)
     workspace_snapshot = _snapshot_workspace_files(repository)
+    emit("preparing", "Repositorio preparado", 10)
 
     try:
         models = create_models()
+        emit("architect", "Modelos configurados; iniciando arquitectura", 12)
         factory = build_autonomous_factory(
             models["architect"],
             models["developer"],
             models["auditor"],
             max_iterations=request.max_iterations,
+            on_event=on_event,
         )
         recursion_limit = max(100, 5 + request.max_iterations * (2 * MAX_TOOL_ROUNDS + 8))
         final_state = factory.invoke(
             create_initial_state(request.requirement),
             config={"recursion_limit": recursion_limit},
+        )
+        emit(
+            "finished",
+            "Ejecución finalizada",
+            100 if final_state.get("is_approved", False) else 95,
+            status="APPROVED" if final_state.get("is_approved", False) else "BLOCKED",
         )
         final_state["autonomy_mode"] = autonomy.mode
         final_state["dependency_install_result"] = get_last_dependency_result()
@@ -163,7 +180,8 @@ def run_factory(request: FactoryRunRequest) -> FactoryRunResult:
                     selected_files,
                     "Entrega autónoma validada",
                 )
-    except (ModelFactoryError, ValueError):
+    except (ModelFactoryError, ValueError) as exc:
+        emit("error", f"Ejecución bloqueada: {exc}", 0, blocked=True)
         raise
 
     report = _build_report(repository, request.requirement, final_state)
